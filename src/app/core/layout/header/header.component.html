@@ -1,0 +1,40 @@
+<div class="mobile-backdrop" *ngIf="menuOpen" (click)="closeMenu()"></div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="row align-items-center gx-3">
+      <div class="col-8 col-md-4">
+        <a class="brand" routerLink="/" (click)="closeMenu()">
+          <span class="brand-mark">A</span>
+          <span>
+            <strong>Adhi & Nidhi</strong>
+            <small>Jewellery</small>
+          </span>
+        </a>
+      </div>
+
+      <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
+        <button
+          class="menu-toggle"
+          type="button"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuOpen"
+          [class.is-active]="menuOpen"
+          aria-controls="site-navigation"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" [class.is-open]="menuOpen">
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+          <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">Products</a>
+          <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+          <a class="btn btn-primary" href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">WhatsApp</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

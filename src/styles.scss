@@ -1,0 +1,24 @@
+@use 'bootstrap/scss/bootstrap' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #b8860b;
+  --background: #faf8f4;
+  --text: #1f1a14;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+img {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}

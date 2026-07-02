@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Solitaire Diamond Ring",
+    "category": "Rings",
+    "price": 175000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "Timeless bridal ring crafted in 22k gold with brilliant diamonds.",
+    "badge": "Featured"
+  },
+  {
+    "id": 2,
+    "name": "Pearl Drop Earrings",
+    "category": "Earrings",
+    "price": 95000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "Elegant pearl earrings with delicate floral detailing.",
+    "badge": "Featured"
+  },
+  {
+    "id": 3,
+    "name": "Gold Mangalsutra",
+    "category": "Necklaces",
+    "price": 132000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "Traditional mangalsutra designed with fine craftsmanship.",
+    "badge": "New"
+  },
+  {
+    "id": 4,
+    "name": "Bangle Set",
+    "category": "Bangles",
+    "price": 118000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "Handcrafted bangles with a rich antique finish.",
+    "badge": "Featured"
+  },
+  {
+    "id": 5,
+    "name": "Emerald Pendant",
+    "category": "Necklaces",
+    "price": 148000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "A regal pendant featuring an emerald centre stone.",
+    "badge": "Popular"
+  },
+  {
+    "id": 6,
+    "name": "Diamond Bracelet",
+    "category": "Bracelets",
+    "price": 162000,
+    "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+    "description": "Sleek bracelet set with glittering diamonds.",
+    "badge": "New"
+  }
+]

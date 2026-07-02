@@ -1,0 +1,109 @@
+.page-shell {
+  min-height: 70vh;
+}
+
+.page-heading {
+  padding: 2rem 0 1rem;
+}
+
+.eyebrow {
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.toolbar {
+  margin-bottom: 1.5rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.chip {
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  background: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  color: #4b4036;
+}
+
+.chip.active {
+  background: #b8860b;
+  color: #fff;
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e8dfd0;
+  border-radius: 999px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(184, 134, 11, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  color: #b8860b;
+  background: rgba(184, 134, 11, 0.12);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem 0 0;
+}
+
+.btn {
+  border-radius: 999px;
+  border: 1px solid #b8860b;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #b8860b;
+  color: #fff;
+}
+
+.btn-outline {
+  color: #b8860b;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+  }
+}

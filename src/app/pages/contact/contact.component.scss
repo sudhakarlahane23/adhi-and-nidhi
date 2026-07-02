@@ -1,0 +1,64 @@
+.page-shell {
+  min-height: 70vh;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+.map-card,
+.contact-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(184, 134, 11, 0.14);
+  padding: 1.25rem;
+  box-shadow: 0 16px 40px rgba(31, 26, 20, 0.06);
+}
+
+.map-card iframe {
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.contact-card + .contact-card {
+  margin-top: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #eadfce;
+  border-radius: 0.75rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  border: 0;
+}
+
+.btn-primary {
+  background: #b8860b;
+  color: #fff;
+}
+
+ul {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
