@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { ProductService } from '../../services/product.service';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { ProductService } from '../../core/services/product.service';
+import { FooterComponent } from '../../core/layout/footer/footer.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/whatsapp-float.component';

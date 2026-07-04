@@ -2,10 +2,10 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Product } from '../../models/product.model';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../core/services/product.service';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { FooterComponent } from '../../core/layout/footer/footer.component';
 import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/whatsapp-float.component';
 
 @Component({
