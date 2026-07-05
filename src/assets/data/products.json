@@ -1,56 +1,140 @@
 [
   {
     "id": 1,
+    "product-id": "PROD-001",
+    "product-code": "RNG-22K-01",
     "name": "Solitaire Diamond Ring",
     "category": "Rings",
     "price": 175000,
+    "material": "Gold & Diamond",
+    "purity": "22K Gold, VVS Diamond",
+    "weight": "4.5g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "Timeless bridal ring crafted in 22k gold with brilliant diamonds.",
-    "badge": "Featured"
+    "badge": "Featured",
+    "tags": ["Bridal", "Solitaire", "Diamond Ring", "Luxury"],
+    "is-featured": true,
+    "is-best-seller": false,
+    "is-new-arrival": false,
+    "seo-information": {
+      "meta-title": "Solitaire Diamond Ring in 22k Gold | Luxury Bridal Jewelry",
+      "meta-description": "Discover our timeless Solitaire Diamond Ring crafted in 22k gold. Perfect for weddings and special occasions.",
+      "keywords": "diamond ring, solitaire ring, bridal jewelry, 22k gold ring"
+    }
   },
   {
     "id": 2,
+    "product-id": "PROD-002",
+    "product-code": "EAR-PRL-02",
     "name": "Pearl Drop Earrings",
     "category": "Earrings",
     "price": 95000,
+    "material": "Gold & Pearl",
+    "purity": "18K Gold, South Sea Pearl",
+    "weight": "6.2g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "Elegant pearl earrings with delicate floral detailing.",
-    "badge": "Featured"
+    "badge": "Featured",
+    "tags": ["Pearl", "Earrings", "Floral", "Elegant"],
+    "is-featured": true,
+    "is-best-seller": true,
+    "is-new-arrival": false,
+    "seo-information": {
+      "meta-title": "Elegant Pearl Drop Earrings with Floral Detail",
+      "meta-description": "Shop elegant Pearl Drop Earrings crafted with delicate floral detailing in fine gold. Perfect for formal wear.",
+      "keywords": "pearl earrings, drop earrings, floral gold earrings, pearl jewelry"
+    }
   },
   {
     "id": 3,
+    "product-id": "PROD-003",
+    "product-code": "NLC-MNG-03",
     "name": "Gold Mangalsutra",
     "category": "Necklaces",
     "price": 132000,
+    "material": "Yellow Gold",
+    "purity": "22K Gold",
+    "weight": "12.8g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "Traditional mangalsutra designed with fine craftsmanship.",
-    "badge": "New"
+    "badge": "New",
+    "tags": ["Traditional", "Mangalsutra", "Wedding Wear", "Gold Necklace"],
+    "is-featured": false,
+    "is-best-seller": false,
+    "is-new-arrival": true,
+    "seo-information": {
+      "meta-title": "Traditional Gold Mangalsutra | Fine Craftsmanship",
+      "meta-description": "Explore our beautifully handcrafted traditional Gold Mangalsutra made with pure 22k yellow gold.",
+      "keywords": "gold mangalsutra, traditional jewelry, wedding mangalsutra, 22k gold necklace"
+    }
   },
   {
     "id": 4,
+    "product-id": "PROD-004",
+    "product-code": "BGL-ANT-04",
     "name": "Bangle Set",
     "category": "Bangles",
     "price": 118000,
+    "material": "Antique Gold",
+    "purity": "22K Gold",
+    "weight": "24.0g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "Handcrafted bangles with a rich antique finish.",
-    "badge": "Featured"
+    "badge": "Featured",
+    "tags": ["Bangles", "Antique Gold", "Handcrafted", "Heritage"],
+    "is-featured": true,
+    "is-best-seller": false,
+    "is-new-arrival": false,
+    "seo-information": {
+      "meta-title": "Handcrafted Antique Gold Bangle Set",
+      "meta-description": "Buy beautifully handcrafted gold bangles featuring a rich, traditional antique finish.",
+      "keywords": "gold bangles, antique bangles, handcrafted jewelry, bridal bangles"
+    }
   },
   {
     "id": 5,
+    "product-id": "PROD-005",
+    "product-code": "NLC-EMR-05",
     "name": "Emerald Pendant",
     "category": "Necklaces",
     "price": 148000,
+    "material": "Gold & Emerald",
+    "purity": "18K Gold, Natural Emerald",
+    "weight": "5.5g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "A regal pendant featuring an emerald centre stone.",
-    "badge": "Popular"
+    "badge": "Popular",
+    "tags": ["Pendant", "Emerald", "Regal", "Gemstone"],
+    "is-featured": false,
+    "is-best-seller": true,
+    "is-new-arrival": false,
+    "seo-information": {
+      "meta-title": "Regal Emerald Pendant in Gold",
+      "meta-description": "Make a statement with this regal emerald pendant featuring a premium quality natural green gemstone centerpiece.",
+      "keywords": "emerald pendant, gemstone necklace, green emerald jewelry, gold pendant"
+    }
   },
   {
     "id": 6,
+    "product-id": "PROD-006",
+    "product-code": "BRC-DIA-06",
     "name": "Diamond Bracelet",
     "category": "Bracelets",
     "price": 162000,
+    "material": "White Gold & Diamond",
+    "purity": "18K White Gold, SI Diamond",
+    "weight": "8.7g",
     "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
     "description": "Sleek bracelet set with glittering diamonds.",
-    "badge": "New"
+    "badge": "New",
+    "tags": ["Diamond Bracelet", "Modern Jewelry", "Sleek", "White Gold"],
+    "is-featured": false,
+    "is-best-seller": false,
+    "is-new-arrival": true,
+    "seo-information": {
+      "meta-title": "Sleek Diamond Bracelet in 18k White Gold",
+      "meta-description": "Shop our modern sleek diamond bracelet, perfectly set with glittering ethically sourced diamonds.",
+      "keywords": "diamond bracelet, white gold bracelet, modern diamond jewelry, luxury wristwear"
+    }
   }
 ]
