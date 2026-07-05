@@ -1,4 +1,6 @@
-<div class="mobile-backdrop" *ngIf="menuOpen" (click)="closeMenu()"></div>
+@if (menuOpen) {
+  <div class="mobile-backdrop" (click)="closeMenu()"></div>
+}
 
 <header class="site-header">
   <div class="container">
@@ -34,9 +36,17 @@
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
           <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">Products</a>
           <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
-          <a class="btn btn-primary" href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">WhatsApp</a>
+          <button class="btn btn-primary whats-app" type="button" (click)="openWhatsappPopup()">Enquire Now</button>
         </nav>
       </div>
     </div>
   </div>
 </header>
+
+@if (showWhatsappPopup) {
+  <div class="whatsapp-popup-overlay" (click)="closeWhatsappPopup()">
+    <div class="whatsapp-popup-panel" role="dialog" aria-modal="true" aria-labelledby="whatsapp-enquiry-title" (click)="$event.stopPropagation()">
+      <app-whatsapp-enquiry (closed)="closeWhatsappPopup()"></app-whatsapp-enquiry>
+    </div>
+  </div>
+}

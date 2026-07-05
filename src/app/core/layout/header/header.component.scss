@@ -50,13 +50,10 @@
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: #b8860b;
-  color: #fff;
-  font-weight: 700;
   flex-shrink: 0;
+  img {
+    height: 5.5rem;
+  }
 }
 
 .menu-toggle {
@@ -115,6 +112,12 @@
   background: rgba(255, 253, 249, 0.98);
   box-shadow: 0 16px 40px rgba(31, 26, 20, 0.14);
   z-index: 1001;
+
+  .whats-app {
+    &:hover {
+      color: #FFF;
+    }
+  }
 }
 
 .site-nav.is-open {
@@ -136,6 +139,28 @@
 
 .site-nav a.active {
   color: #b8860b;
+}
+
+.whatsapp-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 100dvh;
+  background: rgba(17, 17, 17, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.whatsapp-popup-panel {
+  width: min(100%, 40rem);
+  max-height: min(90dvh, 48rem);
+  overflow-y: auto;
+  border-radius: 1rem;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  margin: auto;
 }
 
 .btn-primary {

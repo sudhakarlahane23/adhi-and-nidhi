@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ProductService } from '../../core/services/product.service';
@@ -15,16 +15,138 @@ import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/w
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
   private readonly productService = inject(ProductService);
+  private autoplayTimer: ReturnType<typeof setInterval> | null = null;
 
   readonly products = this.productService.products;
   readonly featuredProducts = this.productService.featuredProducts;
   readonly categories = this.productService.categories;
+  readonly customers = [
+    {
+      id: 1,
+      name: 'Mrs. Mohini ji',
+      city: 'Pune',
+      highlight: 'First Love Story',
+      review: 'The finish looked so elegant that everyone asked where I bought it from.',
+      item: 'Bangles',
+      image: '/assets/images/hero/mohiniji.jpeg',
+    },
+    {
+      id: 2,
+      name: 'Mrs. Anu ji',
+      city: 'Pune',
+      highlight: 'Festival Favorite',
+      review: 'Perfect balance of style and affordability. I wore it for three events in a row.',
+      item: 'Necklace',
+      image: '/assets/images/hero/anuji.jpeg',
+    },
+    {
+      id: 3,
+      name: 'Mrs. Shahida ji',
+      city: 'Pune',
+      highlight: 'Everyday Glow',
+      review: 'So lightweight and classy. It instantly lifted my whole look.',
+      item: 'Bangles',
+      image: '/assets/images/hero/shahidaji.jpeg',
+    },
+    {
+      id: 4,
+      name: 'Mrs. Archana ji',
+      city: 'Pune',
+      highlight: 'Wedding Pick',
+      review: 'It looked rich and polished without being too heavy. Truly special.',
+      item: 'Bracelet and neck chain',
+      image: '/assets/images/hero/unknown.jpeg',
+    },
+  ];
+  readonly categoryImages: Record<string, string> = {
+    Bangles: '/assets/images/collection/bangle-1.jpg',
+    Bracelets: '/assets/images/collection/bangle-2.jpg',
+    Earrings: '/assets/images/collection/bangle-3.jpg',
+    Necklaces: '/assets/images/collection/nackles-1.jpg',
+    Rings: '/assets/images/collection/nackles-2.jpg',
+  };
+  readonly slides = [
+    {
+      id: 1,
+      image: '/assets/images/banners/banner-img-1.jpg',
+      title: 'Bridal Collection',
+      description: 'Discover statement necklaces, exquisite rings, and timeless bangles for your special day.',
+    },
+    {
+      id: 2,
+      image: '/assets/images/banners/banner-img-2.jpg',
+      title: 'Statement Style',
+      description: 'Celebrate every moment with bold, elegant imitation jewellery crafted to sparkle.',
+    },
+    {
+      id: 3,
+      image: '/assets/images/banners/banner-img-3.jpg',
+      title: 'Modern Elegance',
+      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+    },
+    {
+      id: 4,
+      image: '/assets/images/banners/banner-img-4.jpg',
+      title: 'Modern Elegance',
+      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+    },
+    {
+      id: 5,
+      image: '/assets/images/banners/banner-img-5.jpg',
+      title: 'Modern Elegance',
+      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+    },
+    {
+      id: 6,
+      image: '/assets/images/banners/banner-img-6.jpg',
+      title: 'Modern Elegance',
+      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+    },
+    {
+      id: 7,
+      image: '/assets/images/banners/banner-img-7.jpg',
+      title: 'Modern Elegance',
+      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+    }
+  ];
+  readonly currentSlide = signal(0);
+  readonly isPaused = signal(false);
 
-  readonly heroStats = computed(() => [
-    { label: 'Years of Legacy', value: '25+' },
-    { label: 'Certified Designs', value: '500+' },
-    { label: 'Happy Clients', value: '10k' },
-  ]);
+  ngOnInit(): void {
+    this.startAutoplay();
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoplay();
+  }
+
+  startAutoplay(): void {
+    this.stopAutoplay();
+    this.autoplayTimer = setInterval(() => {
+      if (!this.isPaused()) {
+        this.currentSlide.set((this.currentSlide() + 1) % this.slides.length);
+      }
+    }, 3500);
+  }
+
+  stopAutoplay(): void {
+    if (this.autoplayTimer) {
+      clearInterval(this.autoplayTimer);
+      this.autoplayTimer = null;
+    }
+  }
+
+  pauseAutoplay(): void {
+    this.isPaused.set(true);
+  }
+
+  resumeAutoplay(): void {
+    this.isPaused.set(false);
+  }
+
+  goToSlide(index: number): void {
+    this.currentSlide.set(index);
+  }
 }
