@@ -13,7 +13,9 @@
       <div class="col-lg-8">
         <div class="chip-row">
           <button class="chip" [class.active]="selectedCategory() === 'All'" (click)="selectCategory('All')">All</button>
-          <button class="chip" *ngFor="let category of categories()" [class.active]="selectedCategory() === category" (click)="selectCategory(category)">{{ category }}</button>
+          @for (category of categories(); track category) {
+            <button class="chip" [class.active]="selectedCategory() === category" (click)="selectCategory(category)">{{ category }}</button>
+          }
         </div>
       </div>
       <div class="col-lg-4">
@@ -22,27 +24,31 @@
     </div>
 
     <div class="row g-4 mt-2">
-      <div class="col-lg-3 col-md-6" *ngFor="let product of visibleProducts()">
-        <article class="product-card">
-          <img [src]="product.image" [alt]="product.name" />
-          <div class="product-body">
-            <span class="badge">{{ product.category }}</span>
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <div class="product-footer">
-              <strong>₹{{ product.price | number }}</strong>
-              <a class="btn btn-primary" href="https://wa.me/919876543210" target="_blank">WhatsApp</a>
+      @for (product of visibleProducts(); track product.id) {
+        <div class="col-lg-3 col-md-6">
+          <article class="product-card">
+            <img [src]="product.image" [alt]="product.name" />
+            <div class="product-body">
+              <span class="badge">{{ product.category }}</span>
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.description }}</p>
+              <div class="product-footer">
+                <strong>₹{{ product.price | number }}</strong>
+                <a class="btn btn-primary" href="https://wa.me/8208315776" target="_blank">WhatsApp</a>
+              </div>
             </div>
-          </div>
-        </article>
-      </div>
+          </article>
+        </div>
+      }
     </div>
 
-    <div class="pagination" *ngIf="totalPages() > 1">
-      <button class="btn btn-outline" (click)="previousPage()" [disabled]="currentPage() === 1">Previous</button>
-      <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
-      <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage() === totalPages()">Next</button>
-    </div>
+    @if (totalPages() > 1) {
+      <div class="pagination">
+        <button class="btn btn-outline" (click)="previousPage()" [disabled]="currentPage() === 1">Previous</button>
+        <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
+        <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage() === totalPages()">Next</button>
+      </div>
+    }
   </section>
 </main>
 

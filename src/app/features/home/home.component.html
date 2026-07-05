@@ -6,27 +6,33 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
-          <p class="eyebrow">Luxury Jewellery • Crafted in Gold</p>
+          <p class="eyebrow">Luxury artificial • Imitation • Jewellery</p>
           <h1>Adhi & Nidhi Jewellery</h1>
           <p class="lead">Beautiful heirloom pieces for every cherished moment, from bridal splendor to everyday elegance.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" routerLink="/products">Explore Collection</a>
             <a class="btn btn-outline" routerLink="/contact">Book a Consultation</a>
           </div>
-          <div class="stats row gy-3 mt-4">
-            <div class="col-4" *ngFor="let stat of heroStats()">
-              <div class="stat-card">
-                <strong>{{ stat.value }}</strong>
-                <span>{{ stat.label }}</span>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="col-lg-6">
-          <div class="hero-visual">
-            <div class="hero-card">
-              <h3>Bridal Collection</h3>
-              <p>Discover statement necklaces, exquisite rings, and timeless bangles for your special day.</p>
+          <div class="hero-visual" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
+            <div class="hero-slide">
+              <img [src]="slides[currentSlide()].image" [alt]="slides[currentSlide()].title" />
+              <div class="hero-card">
+                <h3>{{ slides[currentSlide()].title }}</h3>
+                <p>{{ slides[currentSlide()].description }}</p>
+              </div>
+              <div class="hero-slider-nav" aria-label="Hero image navigation">
+                @for (slide of slides; track slide.id) {
+                  <button
+                    type="button"
+                    class="slider-dot"
+                    [class.active]="currentSlide() === $index"
+                    (click)="goToSlide($index)"
+                    [attr.aria-label]="'View slide ' + ($index + 1)"
+                  ></button>
+                }
+              </div>
             </div>
           </div>
         </div>
@@ -39,17 +45,64 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6">
           <h2>About Adhi & Nidhi</h2>
-          <p>We blend age-old craftsmanship with contemporary design, creating jewellery that celebrates love, family, and individuality. Every piece is thoughtfully designed to become a cherished keepsake.</p>
+          <p>Adhi & Nidhi is an artificial jewellery brand inspired by my two daughters, Adhi and Nidhi.</p>
+          <p>We offer a carefully selected collection of stylish and affordable artificial jewellery that looks luxurious, elegant, and rich. Every design is chosen with care to help you look your best without spending a lot.</p>
+          <p>You can shop with us online or visit our store to explore our collection in person. We also offer a flat 20% discount on every item, so you always get beautiful jewellery at a great price.</p>
         </div>
         <div class="col-lg-6">
           <div class="about-card">
             <h3>Why families trust us</h3>
             <ul>
-              <li>Hallmarked 22k gold craftsmanship</li>
-              <li>Certified diamonds and gemstones</li>
-              <li>Custom design consultations</li>
+              <li>Premium quality artificial jewellery</li>
+              <li>Elegant, luxury-inspired designs</li>
+              <li>Flat 20% discount on every item</li>
+              <li>Affordable prices with excellent value</li>
+              <li>Carefully selected trendy collections</li>
+              <li>Shop online or visit our store</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section founders-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Meet the Founders</p>
+        <h2>The faces behind Adhi & Nidhi</h2>
+        <p class="section-subtitle">A beautiful story of passion, elegance, and love for timeless imitation jewellery.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <article class="founder-card">
+            <div class="founder-avatar-wrap">
+              <img class="founder-avatar" src="/assets/images/owners/ashwini.jpeg" alt="Ashwini" />
+            </div>
+            <h3>Ashwini</h3>
+            <p class="founder-role">Founder & Creative Vision</p>
+            <p>A warm-hearted designer who believes every piece should reflect grace, confidence, and joyful celebration.</p>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <article class="founder-card">
+            <div class="founder-avatar-wrap">
+              <img class="founder-avatar" src="/assets/images/owners/adhi.jpeg" alt="Adhi" />
+            </div>
+            <h3>Adhi</h3>
+            <p class="founder-role">Brand Curator</p>
+            <p>Adhi brings a fresh, youthful touch to the collection, blending modern style with elegant traditional charm.</p>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <article class="founder-card">
+            <div class="founder-avatar-wrap">
+              <img class="founder-avatar" src="/assets/images/owners/nidhi.jpeg" alt="Nidhi" />
+            </div>
+            <h3>Nidhi</h3>
+            <p class="founder-role">Customer Experience & Style Guide</p>
+            <p>Nidhi loves helping every customer find something that feels personal, radiant, and perfectly suited to their style.</p>
+          </article>
         </div>
       </div>
     </div>
@@ -62,12 +115,17 @@
         <h2>Popular categories</h2>
       </div>
       <div class="row g-4">
-        <div class="col-md-4" *ngFor="let category of categories()">
-          <div class="category-card">
-            <h3>{{ category }}</h3>
-            <p>Exquisite craftsmanship for your everyday sparkle.</p>
+        @for (category of categories(); track category) {
+          <div class="col-md-4">
+            <div class="category-card">
+              <img [src]="categoryImages[category]" [alt]="category" />
+              <div class="category-card-body">
+                <h3>{{ category }}</h3>
+                <p>Exquisite craftsmanship for your everyday sparkle.</p>
+              </div>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   </section>
@@ -75,56 +133,43 @@
   <section class="section">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Featured Jewellery</p>
-        <h2>Handpicked favourites</h2>
+        <p class="eyebrow">The Beginning of Our Journey</p>
+        <h2>🌸 A Heartfelt Thank You</h2>
+        <p class="section-subtitle">"Every great journey begins with someone who believes in you. Thank you for being our first four customers and for making Adhi & Nidhi Jewellery's dream shine brighter. We are forever grateful for your trust and support." ✨</p>
       </div>
       <div class="row g-4">
-        <div class="col-lg-3 col-md-6" *ngFor="let product of featuredProducts()">
-          <article class="product-card">
-            <img [src]="product.image" [alt]="product.name" />
-            <div class="product-body">
-              <span class="badge">{{ product.badge }}</span>
-              <h3>{{ product.name }}</h3>
-              <p>{{ product.description }}</p>
-              <div class="product-footer">
-                <strong>₹{{ product.price | number }}</strong>
-                <a class="btn btn-primary" href="https://wa.me/919876543210" target="_blank">Enquire</a>
+        @for (customer of customers; track customer.id) {
+          <div class="col-lg-3 col-md-6">
+            <article class="customer-card">
+              <div class="customer-avatar-wrap">
+                <img class="customer-avatar" [src]="customer.image" [alt]="customer.name" />
               </div>
-            </div>
-          </article>
-        </div>
+              <div class="customer-body">
+                <span class="customer-highlight">{{ customer.highlight }}</span>
+                <h3>{{ customer.name }}</h3>
+                <p class="customer-location">{{ customer.city }}</p>
+                <p class="customer-quote">“{{ customer.review }}”</p>
+                <p class="customer-item">{{ customer.item }}</p>
+              </div>
+            </article>
+          </div>
+        }
       </div>
     </div>
   </section>
 
   <section class="section offer-banner">
-    <div class="container">
+    <div class="container position-relative">
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
-          <p class="eyebrow">Limited Offer</p>
-          <h2>Receive complimentary styling assistance with every bridal purchase.</h2>
+          <p class="eyebrow">🎁 Free Gift on Every Order Above ₹999</p>
+          <h2>Shop for ₹1,000 or more and receive a complimentary gift worth up to ₹100!</h2>
         </div>
         <div class="col-lg-4 text-lg-end">
-          <a class="btn btn-light" routerLink="/contact">Book Now</a>
+          <a class="btn btn-light" routerLink="/products">Shop Now!</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section newsletter">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <p class="eyebrow">Stay inspired</p>
-          <h2>Subscribe for new arrivals and exclusive offers.</h2>
-        </div>
-        <div class="col-lg-5">
-          <form class="newsletter-form">
-            <input type="email" placeholder="Your email address" />
-            <button type="button" class="btn btn-primary">Join</button>
-          </form>
-        </div>
-      </div>
+      <div class="offer-banner-divider"></div>
     </div>
   </section>
 </main>

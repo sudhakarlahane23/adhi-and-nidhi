@@ -1,0 +1,217 @@
+<div class="whatsapp-modal">
+
+    <div class="modal-header">
+        <h2>Contact Adhi & Nidhi Jewellery</h2>
+        <button
+            type="button"
+            class="close-btn"
+            (click)="close()">
+            ✕
+        </button>
+    </div>
+
+    <form
+        [formGroup]="enquiryForm"
+        (ngSubmit)="sendWhatsapp()">
+
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">
+                Full Name <span>*</span>
+            </label>
+
+            <input
+                id="name"
+                type="text"
+                formControlName="name"
+                placeholder="Enter your full name">
+
+            @if (enquiryForm.controls.name.touched &&
+            enquiryForm.controls.name.invalid) {
+                <small>Please enter your name.</small>
+            }
+        </div>
+
+        <!-- Mobile -->
+        <div class="form-group">
+            <label for="mobile">
+                Mobile Number <span>*</span>
+            </label>
+
+            <input
+                id="mobile"
+                type="tel"
+                maxlength="10"
+                formControlName="mobile"
+                placeholder="9876543210">
+
+            @if (enquiryForm.controls.mobile.touched &&
+            enquiryForm.controls.mobile.invalid) {
+                <small>Enter a valid mobile number.</small>
+            }
+        </div>
+
+        <!-- House -->
+        <div class="form-group">
+            <label for="house">
+                House / Flat No. <span>*</span>
+            </label>
+
+            <input
+                id="house"
+                type="text"
+                formControlName="house"
+                placeholder="Flat No., Building Name">
+        </div>
+
+        <!-- Area -->
+        <div class="form-group">
+            <label for="area">
+                Area / Locality <span>*</span>
+            </label>
+
+            <input
+                id="area"
+                type="text"
+                formControlName="area"
+                placeholder="Area or Locality">
+        </div>
+
+        <!-- City -->
+        <div class="form-group">
+            <label for="city">
+                City <span>*</span>
+            </label>
+
+            <input
+                id="city"
+                type="text"
+                formControlName="city"
+                placeholder="City">
+        </div>
+
+        <!-- Pincode -->
+        <div class="form-group">
+            <label for="pincode">
+                Pincode <span>*</span>
+            </label>
+
+            <input
+                id="pincode"
+                type="text"
+                maxlength="6"
+                formControlName="pincode"
+                placeholder="411001">
+        </div>
+
+        <!-- Enquiry Type -->
+        <div class="form-group">
+
+            <label for="enquiryType">
+                Enquiry Type <span>*</span>
+            </label>
+
+            <select
+                id="enquiryType"
+                formControlName="enquiryType">
+
+                <option value="">
+                    Select Enquiry Type
+                </option>
+
+                <option value="Purchase">
+                    Purchase
+                </option>
+
+                <option value="Return">
+                    Return
+                </option>
+
+                <option value="Exchange">
+                    Exchange
+                </option>
+
+                <option value="Repair">
+                    Repair
+                </option>
+
+                <option value="Custom Jewellery">
+                    Custom Jewellery
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+
+            <label for="message">
+                Message <span>*</span>
+            </label>
+
+            <textarea
+                id="message"
+                rows="5"
+                formControlName="message"
+                placeholder="Write your enquiry here...">
+            </textarea>
+
+        </div>
+
+        <!-- Location -->
+
+        <div class="form-group">
+
+            <button
+                type="button"
+                class="location-btn"
+                (click)="shareLocation()">
+
+                📍 Share Current Location
+
+            </button>
+
+            @if (locationShared) {
+
+                <div class="location-success">
+
+                    ✅ Location added successfully.
+
+                </div>
+
+            }
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="button-group">
+
+            <button
+                type="button"
+                class="cancel-btn"
+                (click)="close()">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="button"
+                class="whatsapp-btn"
+                (click)="sendWhatsapp()">
+
+                Send on WhatsApp
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
