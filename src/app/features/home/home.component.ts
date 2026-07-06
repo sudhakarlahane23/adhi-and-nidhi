@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       id: 1,
       name: 'Mrs. Mohini ji',
       city: 'Pune',
-      highlight: 'First Love Story',
+      highlight: 'Everyday Glow',
       review: 'The finish looked so elegant that everyone asked where I bought it from.',
       item: 'Bangles',
       image: '/assets/images/hero/mohiniji.jpeg',
