@@ -1,7 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Product } from '../../models/product.model';
 import { ProductService } from '../../core/services/product.service';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
