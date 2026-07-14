@@ -22,7 +22,7 @@ export class ProductsComponent {
   readonly selectedCategory = signal<string>('All');
   readonly searchTerm = signal('');
   readonly currentPage = signal(1);
-  readonly pageSize = 4;
+  readonly pageSize = 400;
 
   readonly filteredProducts = computed(() => {
     const term = this.searchTerm().toLowerCase();
