@@ -52,10 +52,55 @@
 
 .product-card img {
   width: 100%;
-  height: 220px;
+  // height: 220px;
   // border-radius: 1.25rem 1.25rem 0 0;
   border-bottom: 1px solid rgba(184, 134, 11, 0.7);
   object-fit: cover;
+}
+
+.product-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    img {
+
+        width: 100%;
+
+        display: block;
+
+        transition: opacity .35s ease;
+    }
+
+    .hover-image {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        opacity: 0;
+
+    }
+
+    &:hover {
+
+        // .main-image {
+
+        //     opacity: 0;
+
+        // }
+
+        .hover-image {
+
+            opacity: 1;
+
+        }
+
+    }
+
 }
 
 .product-body {

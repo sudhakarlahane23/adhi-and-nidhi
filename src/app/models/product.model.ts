@@ -11,10 +11,16 @@ export interface Product {
   price: string;
   image: string;
 
+  images?: ProductImages;
+
   offer?: string;
   "is-out-of-stock"?: boolean;
 
   "seo-information": ProductSeoInformation;
+}
+
+export interface ProductImages {
+  hover?: string;
 }
 
 export interface ProductSeoInformation {
