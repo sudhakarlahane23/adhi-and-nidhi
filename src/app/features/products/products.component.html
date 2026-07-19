@@ -12,41 +12,56 @@
     <div class="toolbar row g-3 align-items-center">
       <div class="col-lg-8">
         <div class="chip-row">
-          <button class="chip" [class.active]="selectedCategory() === 'All'" (click)="selectCategory('All')">All</button>
+          <button class="chip" [class.active]="selectedCategory() === 'All'"
+            (click)="selectCategory('All')">All</button>
           @for (category of categories(); track category) {
-            <button class="chip" [class.active]="selectedCategory() === category" (click)="selectCategory(category)">{{ category }}</button>
+          <button class="chip" [class.active]="selectedCategory() === category" (click)="selectCategory(category)">{{
+            category }}</button>
           }
         </div>
       </div>
       <div class="col-lg-4">
-        <input class="search-box" type="text" placeholder="Search products" [value]="searchTerm()" (input)="updateSearch($any($event.target).value)" />
+        <input class="search-box" type="text" placeholder="Search products" [value]="searchTerm()"
+          (input)="updateSearch($any($event.target).value)" />
       </div>
     </div>
 
     <div class="row g-4 mt-2">
       @for (product of visibleProducts(); track product['product-id']) {
-        <div class="col-lg-3 col-md-6">
-          <article class="product-card">
-            <!-- <h2>{{ product.image }}</h2> -->
-            <img [src]="product.image" [alt]="product['product-code']" />
-            <div class="product-body">
-              <span class="badge">{{ product.category }}</span>
-              <div class="product-footer">
-                <strong>{{ product.price }}</strong>
-                <a class="btn btn-primary" href="https://wa.me/8208315776" target="_blank">WhatsApp</a>
-              </div>
+      <div class="col-lg-3 col-md-6">
+        <article class="product-card">
+          <!-- <div class="image-wrapp"> -->
+            @if (product.images?.hover) {
+              <img class="hover-image" [src]="product.images.hover" [alt]="product['product-code']">
+            }
+            <img class="main-image" [src]="product.image" [alt]="product['product-code']">
+          <!-- </div> -->
+          <div class="product-body">
+
+            <span class="badge">{{ product.category }}</span>
+
+            <div class="product-footer">
+              <strong>{{ product.price }}</strong>
+
+              <a class="btn btn-primary" href="https://wa.me/8208315776" target="_blank">
+                WhatsApp
+              </a>
+
             </div>
-          </article>
-        </div>
+
+          </div>
+
+        </article>
+      </div>
       }
     </div>
 
     @if (totalPages() > 1) {
-      <div class="pagination">
-        <button class="btn btn-outline" (click)="previousPage()" [disabled]="currentPage() === 1">Previous</button>
-        <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
-        <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage() === totalPages()">Next</button>
-      </div>
+    <div class="pagination">
+      <button class="btn btn-outline" (click)="previousPage()" [disabled]="currentPage() === 1">Previous</button>
+      <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
+      <button class="btn btn-primary" (click)="nextPage()" [disabled]="currentPage() === totalPages()">Next</button>
+    </div>
     }
   </section>
 </main>

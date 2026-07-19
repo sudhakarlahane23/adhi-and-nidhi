@@ -6,7 +6,7 @@
     "start": "ng serve -o",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "merge-products": "node scripts/generate-products.js",
+    "merge-products": "node scripts/generate-products-with-hover.js",
     "build": "npm run merge-products && ng build"
   },
   "private": true,

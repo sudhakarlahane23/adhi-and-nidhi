@@ -11,8 +11,8 @@ const OUTPUT_FILE = path.join(
     "../src/assets/data/products.json"
 );
 
-// const IMAGE_EXTENSIONS = [".avif", ".webp", ".jpg", ".jpeg", ".png"];
-const IMAGE_EXTENSIONS = [".avif"];
+const IMAGE_EXTENSIONS = [".avif", ".webp", ".jpg", ".jpeg", ".png"];
+// const IMAGE_EXTENSIONS = [".avif"];
 
 //-----------------------------------------
 // Product Status Tags

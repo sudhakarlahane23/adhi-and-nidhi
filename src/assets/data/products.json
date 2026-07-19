@@ -1,5 +1,5 @@
 {
-  "totalProducts": 50,
+  "totalProducts": 51,
   "products": [
     {
       "product-id": "IMG-1",
@@ -8,6 +8,13 @@
       "category": "ad-stud",
       "price": "₹90",
       "image": "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1.avif",
+      "images": {
+        "hover": "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-hover.webp",
+        "slides": [
+          "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-slide-1.webp",
+          "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-slide-2.webp"
+        ]
+      },
       "offer": "10%",
       "seo-information": {
         "seo-information": {
@@ -20,10 +27,13 @@
     {
       "product-id": "IMG-2",
       "product-code": "AD-TOP-001",
-      "alt": "ad stud r 99 out of stock img 1",
+      "alt": "ad stud r 99 img 2",
       "category": "ad-top",
       "price": "₹99",
-      "image": "/assets/images/collection/ad-top/ad-stud-r-99-out-of-stock-img-1.avif",
+      "image": "/assets/images/collection/ad-top/ad-stud-r-99-img-2.avif",
+      "images": {
+        "hover": "/assets/images/collection/ad-top/ad-stud-r-99-img-2-hover.webp"
+      },
       "seo-information": {
         "seo-information": {
           "meta-title": "Statement Ring with Elegant Finish",
@@ -35,6 +45,24 @@
     {
       "product-id": "IMG-3",
       "product-code": "AD-TOP-002",
+      "alt": "ad stud r 99 out of stock img 1",
+      "category": "ad-top",
+      "price": "₹99",
+      "image": "/assets/images/collection/ad-top/ad-stud-r-99-out-of-stock-img-1.avif",
+      "images": {
+        "hover": "/assets/images/collection/ad-top/ad-stud-r-99-out-of-stock-img-1-hover.webp"
+      },
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-4",
+      "product-code": "AD-TOP-003",
       "alt": "ad top r 90 img 4",
       "category": "ad-top",
       "price": "₹90",
@@ -48,8 +76,8 @@
       }
     },
     {
-      "product-id": "IMG-4",
-      "product-code": "AD-TOP-003",
+      "product-id": "IMG-5",
+      "product-code": "AD-TOP-004",
       "alt": "ad top r 99 img 3",
       "category": "ad-top",
       "price": "₹99",
@@ -63,7 +91,7 @@
       }
     },
     {
-      "product-id": "IMG-5",
+      "product-id": "IMG-6",
       "product-code": "BANGLES-001",
       "alt": "bangle r 150 sz 2 4 and 2 6 img 1",
       "category": "bangles",
@@ -78,7 +106,7 @@
       }
     },
     {
-      "product-id": "IMG-6",
+      "product-id": "IMG-7",
       "product-code": "BRACELETS-001",
       "alt": "bracelet r 149 clr gold img 3",
       "category": "bracelets",
@@ -93,7 +121,7 @@
       }
     },
     {
-      "product-id": "IMG-7",
+      "product-id": "IMG-8",
       "product-code": "BRACELETS-002",
       "alt": "bracelet r 149 clr silver img 4",
       "category": "bracelets",
@@ -108,7 +136,7 @@
       }
     },
     {
-      "product-id": "IMG-8",
+      "product-id": "IMG-9",
       "product-code": "BRACELETS-003",
       "alt": "bracelet r 199 img 1",
       "category": "bracelets",
@@ -123,7 +151,7 @@
       }
     },
     {
-      "product-id": "IMG-9",
+      "product-id": "IMG-10",
       "product-code": "BRACELETS-004",
       "alt": "bracelet r 199 img 2",
       "category": "bracelets",
@@ -138,7 +166,7 @@
       }
     },
     {
-      "product-id": "IMG-10",
+      "product-id": "IMG-11",
       "product-code": "BUGADI-001",
       "alt": "bugadi r 100 bugadi img 1",
       "category": "bugadi",
@@ -153,7 +181,7 @@
       }
     },
     {
-      "product-id": "IMG-11",
+      "product-id": "IMG-12",
       "product-code": "BUGADI-002",
       "alt": "bugadi r 80 bugadi oos img 2",
       "category": "bugadi",
@@ -169,7 +197,7 @@
       }
     },
     {
-      "product-id": "IMG-12",
+      "product-id": "IMG-13",
       "product-code": "KAJAL-001",
       "alt": "kajal r 99 img 1",
       "category": "kajal",
@@ -184,7 +212,7 @@
       }
     },
     {
-      "product-id": "IMG-13",
+      "product-id": "IMG-14",
       "product-code": "LONG-MS-001",
       "alt": "kajal r 149 img 3",
       "category": "long-ms",
@@ -199,7 +227,7 @@
       }
     },
     {
-      "product-id": "IMG-14",
+      "product-id": "IMG-15",
       "product-code": "LONG-MS-002",
       "alt": "kajal r 199 img 4",
       "category": "long-ms",
@@ -214,7 +242,7 @@
       }
     },
     {
-      "product-id": "IMG-15",
+      "product-id": "IMG-16",
       "product-code": "LONG-MS-003",
       "alt": "kajal r 699 img 1",
       "category": "long-ms",
@@ -229,7 +257,7 @@
       }
     },
     {
-      "product-id": "IMG-16",
+      "product-id": "IMG-17",
       "product-code": "LONG-MS-004",
       "alt": "lg ms r 669 img 2",
       "category": "long-ms",
@@ -244,7 +272,7 @@
       }
     },
     {
-      "product-id": "IMG-17",
+      "product-id": "IMG-18",
       "product-code": "MAKEUP-KIT-001",
       "alt": "makeup kit  r 130 img 1",
       "category": "makeup-kit",
@@ -259,7 +287,7 @@
       }
     },
     {
-      "product-id": "IMG-18",
+      "product-id": "IMG-19",
       "product-code": "MAKEUP-KIT-002",
       "alt": "makeup kit  r 150 img 1",
       "category": "makeup-kit",
@@ -274,7 +302,7 @@
       }
     },
     {
-      "product-id": "IMG-19",
+      "product-id": "IMG-20",
       "product-code": "MAKEUP-KIT-003",
       "alt": "makeup kit  r 299 img 1",
       "category": "makeup-kit",
@@ -289,7 +317,7 @@
       }
     },
     {
-      "product-id": "IMG-20",
+      "product-id": "IMG-21",
       "product-code": "NECKLACES-001",
       "alt": "necklace r 1099 img 1",
       "category": "necklaces",
@@ -304,7 +332,7 @@
       }
     },
     {
-      "product-id": "IMG-21",
+      "product-id": "IMG-22",
       "product-code": "NECKLACES-002",
       "alt": "necklace r 130 img 1",
       "category": "necklaces",
@@ -319,7 +347,7 @@
       }
     },
     {
-      "product-id": "IMG-22",
+      "product-id": "IMG-23",
       "product-code": "NECKLACES-003",
       "alt": "necklace r 130 img 2",
       "category": "necklaces",
@@ -334,7 +362,7 @@
       }
     },
     {
-      "product-id": "IMG-23",
+      "product-id": "IMG-24",
       "product-code": "NECKLACES-004",
       "alt": "necklace r 130 img 4",
       "category": "necklaces",
@@ -349,7 +377,7 @@
       }
     },
     {
-      "product-id": "IMG-24",
+      "product-id": "IMG-25",
       "product-code": "NECKLACES-005",
       "alt": "necklace r 130 img 5",
       "category": "necklaces",
@@ -364,7 +392,7 @@
       }
     },
     {
-      "product-id": "IMG-25",
+      "product-id": "IMG-26",
       "product-code": "NECKLACES-006",
       "alt": "necklace r 140 img 1",
       "category": "necklaces",
@@ -379,7 +407,7 @@
       }
     },
     {
-      "product-id": "IMG-26",
+      "product-id": "IMG-27",
       "product-code": "NECKLACES-007",
       "alt": "necklace r 140 img 3",
       "category": "necklaces",
@@ -394,7 +422,7 @@
       }
     },
     {
-      "product-id": "IMG-27",
+      "product-id": "IMG-28",
       "product-code": "NECKLACES-008",
       "alt": "necklace r 170 img 3",
       "category": "necklaces",
@@ -409,7 +437,7 @@
       }
     },
     {
-      "product-id": "IMG-28",
+      "product-id": "IMG-29",
       "product-code": "NECKLACES-009",
       "alt": "necklace r 199 img 6",
       "category": "necklaces",
@@ -424,7 +452,7 @@
       }
     },
     {
-      "product-id": "IMG-29",
+      "product-id": "IMG-30",
       "product-code": "NECKLACES-010",
       "alt": "necklace r 199 img 7",
       "category": "necklaces",
@@ -439,7 +467,7 @@
       }
     },
     {
-      "product-id": "IMG-30",
+      "product-id": "IMG-31",
       "product-code": "NECKLACES-011",
       "alt": "necklace r 80 img 1",
       "category": "necklaces",
@@ -454,7 +482,7 @@
       }
     },
     {
-      "product-id": "IMG-31",
+      "product-id": "IMG-32",
       "product-code": "SARI-PIN-001",
       "alt": "sari pin r 40 img 10",
       "category": "sari-pin",
@@ -469,7 +497,7 @@
       }
     },
     {
-      "product-id": "IMG-32",
+      "product-id": "IMG-33",
       "product-code": "SARI-PIN-002",
       "alt": "sari pin r 40 img 5",
       "category": "sari-pin",
@@ -484,7 +512,7 @@
       }
     },
     {
-      "product-id": "IMG-33",
+      "product-id": "IMG-34",
       "product-code": "SARI-PIN-003",
       "alt": "sari pin r 40 img 6",
       "category": "sari-pin",
@@ -499,7 +527,7 @@
       }
     },
     {
-      "product-id": "IMG-34",
+      "product-id": "IMG-35",
       "product-code": "SARI-PIN-004",
       "alt": "sari pin r 40 img 7",
       "category": "sari-pin",
@@ -514,7 +542,7 @@
       }
     },
     {
-      "product-id": "IMG-35",
+      "product-id": "IMG-36",
       "product-code": "SARI-PIN-005",
       "alt": "sari pin r 40 img 8",
       "category": "sari-pin",
@@ -529,7 +557,7 @@
       }
     },
     {
-      "product-id": "IMG-36",
+      "product-id": "IMG-37",
       "product-code": "SARI-PIN-006",
       "alt": "sari pin r 40 img 9",
       "category": "sari-pin",
@@ -544,7 +572,7 @@
       }
     },
     {
-      "product-id": "IMG-37",
+      "product-id": "IMG-38",
       "product-code": "SARI-PIN-007",
       "alt": "sari pin r 99 img 1",
       "category": "sari-pin",
@@ -559,7 +587,7 @@
       }
     },
     {
-      "product-id": "IMG-38",
+      "product-id": "IMG-39",
       "product-code": "SARI-PIN-008",
       "alt": "sari pin r 99 img 2",
       "category": "sari-pin",
@@ -574,7 +602,7 @@
       }
     },
     {
-      "product-id": "IMG-39",
+      "product-id": "IMG-40",
       "product-code": "SARI-PIN-009",
       "alt": "sari pin r 99 img 3",
       "category": "sari-pin",
@@ -589,7 +617,7 @@
       }
     },
     {
-      "product-id": "IMG-40",
+      "product-id": "IMG-41",
       "product-code": "SARI-PIN-010",
       "alt": "sari pin r 99 img 4",
       "category": "sari-pin",
@@ -604,7 +632,7 @@
       }
     },
     {
-      "product-id": "IMG-41",
+      "product-id": "IMG-42",
       "product-code": "SHORT-MS-001",
       "alt": "short ms r 150 img 1",
       "category": "short-ms",
@@ -619,7 +647,7 @@
       }
     },
     {
-      "product-id": "IMG-42",
+      "product-id": "IMG-43",
       "product-code": "SHORT-MS-002",
       "alt": "short ms r 150 img 2",
       "category": "short-ms",
@@ -634,7 +662,7 @@
       }
     },
     {
-      "product-id": "IMG-43",
+      "product-id": "IMG-44",
       "product-code": "SHORT-MS-003",
       "alt": "short ms r 160 img 1",
       "category": "short-ms",
@@ -649,7 +677,7 @@
       }
     },
     {
-      "product-id": "IMG-44",
+      "product-id": "IMG-45",
       "product-code": "SHORT-MS-004",
       "alt": "short ms r 99 img 1",
       "category": "short-ms",
@@ -664,7 +692,7 @@
       }
     },
     {
-      "product-id": "IMG-45",
+      "product-id": "IMG-46",
       "product-code": "SHORT-MS-005",
       "alt": "short ms r 99 img 2",
       "category": "short-ms",
@@ -679,7 +707,7 @@
       }
     },
     {
-      "product-id": "IMG-46",
+      "product-id": "IMG-47",
       "product-code": "STUD-001",
       "alt": "stud r 50 img 4",
       "category": "stud",
@@ -694,7 +722,7 @@
       }
     },
     {
-      "product-id": "IMG-47",
+      "product-id": "IMG-48",
       "product-code": "STUD-002",
       "alt": "stud r 50 img 5",
       "category": "stud",
@@ -709,7 +737,7 @@
       }
     },
     {
-      "product-id": "IMG-48",
+      "product-id": "IMG-49",
       "product-code": "STUD-003",
       "alt": "stud r 70 img 1",
       "category": "stud",
@@ -724,7 +752,7 @@
       }
     },
     {
-      "product-id": "IMG-49",
+      "product-id": "IMG-50",
       "product-code": "SUI-DHAGA-001",
       "alt": "sui dhaga r 100 img 2",
       "category": "sui-dhaga",
@@ -739,7 +767,7 @@
       }
     },
     {
-      "product-id": "IMG-50",
+      "product-id": "IMG-51",
       "product-code": "SUI-DHAGA-002",
       "alt": "sui dhaga r 60 img 1",
       "category": "sui-dhaga",
