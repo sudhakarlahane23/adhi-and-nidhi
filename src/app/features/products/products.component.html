@@ -28,25 +28,23 @@
 
     <div class="row g-4 mt-2">
       @for (product of visibleProducts(); track product['product-id']) {
-      <div class="col-lg-3 col-md-6">
+      <div class="col-6 col-lg-3">
         <article class="product-card">
-          <!-- <div class="image-wrapp"> -->
+          <div class="product-img-wrapp">
             @if (product.images?.hover) {
               <img class="hover-image" [src]="product.images.hover" [alt]="product['product-code']">
             }
             <img class="main-image" [src]="product.image" [alt]="product['product-code']">
-          <!-- </div> -->
+          </div>
           <div class="product-body">
 
             <span class="badge">{{ product.category }}</span>
 
             <div class="product-footer">
               <strong>{{ product.price }}</strong>
-
               <a class="btn btn-primary" href="https://wa.me/8208315776" target="_blank">
-                WhatsApp
+                Add to cart
               </a>
-
             </div>
 
           </div>
