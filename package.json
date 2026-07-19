@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "merge-products": "node scripts/generate-products.js",
+    "build": "npm run merge-products && ng build"
   },
   "private": true,
   "packageManager": "npm@10.9.8",

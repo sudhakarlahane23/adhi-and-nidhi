@@ -1,209 +1,757 @@
-[
-  {
-    "id": 1,
-    "product-id": "PROD-001",
-    "product-code": "RNG-IMT-01",
-    "name": "Statement Ring",
-    "category": "Rings",
-    "price": 99,
-    "material": "Imitation Finish",
-    "purity": "Premium imitation finish",
-    "weight": "4.5g",
-    "image": "/assets/images/products/ad-stud-img-1.avif",
-    "description": "Bridal-inspired ring with a graceful statement finish.",
-    "badge": "Featured",
-    "tags": ["Bridal", "Statement", "Ring", "Luxury"],
-    "is-featured": true,
-    "is-best-seller": false,
-    "is-new-arrival": false,
-    "seo-information": {
-      "meta-title": "Statement Ring with Elegant Finish",
-      "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
-      "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+{
+  "totalProducts": 50,
+  "products": [
+    {
+      "product-id": "IMG-1",
+      "product-code": "AD-STUD-001",
+      "alt": "ad stud r 90 ofr 10 img 1",
+      "category": "ad-stud",
+      "price": "₹90",
+      "image": "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1.avif",
+      "offer": "10%",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-2",
+      "product-code": "AD-TOP-001",
+      "alt": "ad stud r 99 out of stock img 1",
+      "category": "ad-top",
+      "price": "₹99",
+      "image": "/assets/images/collection/ad-top/ad-stud-r-99-out-of-stock-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-3",
+      "product-code": "AD-TOP-002",
+      "alt": "ad top r 90 img 4",
+      "category": "ad-top",
+      "price": "₹90",
+      "image": "/assets/images/collection/ad-top/ad-top-r-90-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-4",
+      "product-code": "AD-TOP-003",
+      "alt": "ad top r 99 img 3",
+      "category": "ad-top",
+      "price": "₹99",
+      "image": "/assets/images/collection/ad-top/ad-top-r-99-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-5",
+      "product-code": "BANGLES-001",
+      "alt": "bangle r 150 sz 2 4 and 2 6 img 1",
+      "category": "bangles",
+      "price": "₹150",
+      "image": "/assets/images/collection/bangles/bangle-r-150-sz-2-4-and-2-6-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-6",
+      "product-code": "BRACELETS-001",
+      "alt": "bracelet r 149 clr gold img 3",
+      "category": "bracelets",
+      "price": "₹149",
+      "image": "/assets/images/collection/bracelets/bracelet-r-149-clr-gold-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-7",
+      "product-code": "BRACELETS-002",
+      "alt": "bracelet r 149 clr silver img 4",
+      "category": "bracelets",
+      "price": "₹149",
+      "image": "/assets/images/collection/bracelets/bracelet-r-149-clr-silver-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-8",
+      "product-code": "BRACELETS-003",
+      "alt": "bracelet r 199 img 1",
+      "category": "bracelets",
+      "price": "₹199",
+      "image": "/assets/images/collection/bracelets/bracelet-r-199-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-9",
+      "product-code": "BRACELETS-004",
+      "alt": "bracelet r 199 img 2",
+      "category": "bracelets",
+      "price": "₹199",
+      "image": "/assets/images/collection/bracelets/bracelet-r-199-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-10",
+      "product-code": "BUGADI-001",
+      "alt": "bugadi r 100 bugadi img 1",
+      "category": "bugadi",
+      "price": "₹100",
+      "image": "/assets/images/collection/bugadi/bugadi-r-100-bugadi-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-11",
+      "product-code": "BUGADI-002",
+      "alt": "bugadi r 80 bugadi oos img 2",
+      "category": "bugadi",
+      "price": "₹80",
+      "image": "/assets/images/collection/bugadi/bugadi-r-80-bugadi-oos-img-2.avif",
+      "is-out-of-stock": true,
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-12",
+      "product-code": "KAJAL-001",
+      "alt": "kajal r 99 img 1",
+      "category": "kajal",
+      "price": "₹99",
+      "image": "/assets/images/collection/kajal/kajal-r-99-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-13",
+      "product-code": "LONG-MS-001",
+      "alt": "kajal r 149 img 3",
+      "category": "long-ms",
+      "price": "₹149",
+      "image": "/assets/images/collection/long-ms/kajal-r-149-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-14",
+      "product-code": "LONG-MS-002",
+      "alt": "kajal r 199 img 4",
+      "category": "long-ms",
+      "price": "₹199",
+      "image": "/assets/images/collection/long-ms/kajal-r-199-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-15",
+      "product-code": "LONG-MS-003",
+      "alt": "kajal r 699 img 1",
+      "category": "long-ms",
+      "price": "₹699",
+      "image": "/assets/images/collection/long-ms/kajal-r-699-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-16",
+      "product-code": "LONG-MS-004",
+      "alt": "lg ms r 669 img 2",
+      "category": "long-ms",
+      "price": "₹669",
+      "image": "/assets/images/collection/long-ms/lg-ms-r-669-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-17",
+      "product-code": "MAKEUP-KIT-001",
+      "alt": "makeup kit  r 130 img 1",
+      "category": "makeup-kit",
+      "price": "₹130",
+      "image": "/assets/images/collection/makeup-kit/makeup-kit--r-130-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-18",
+      "product-code": "MAKEUP-KIT-002",
+      "alt": "makeup kit  r 150 img 1",
+      "category": "makeup-kit",
+      "price": "₹150",
+      "image": "/assets/images/collection/makeup-kit/makeup-kit--r-150-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-19",
+      "product-code": "MAKEUP-KIT-003",
+      "alt": "makeup kit  r 299 img 1",
+      "category": "makeup-kit",
+      "price": "₹299",
+      "image": "/assets/images/collection/makeup-kit/makeup-kit--r-299-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-20",
+      "product-code": "NECKLACES-001",
+      "alt": "necklace r 1099 img 1",
+      "category": "necklaces",
+      "price": "₹1099",
+      "image": "/assets/images/collection/necklaces/necklace-r-1099-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-21",
+      "product-code": "NECKLACES-002",
+      "alt": "necklace r 130 img 1",
+      "category": "necklaces",
+      "price": "₹130",
+      "image": "/assets/images/collection/necklaces/necklace-r-130-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-22",
+      "product-code": "NECKLACES-003",
+      "alt": "necklace r 130 img 2",
+      "category": "necklaces",
+      "price": "₹130",
+      "image": "/assets/images/collection/necklaces/necklace-r-130-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-23",
+      "product-code": "NECKLACES-004",
+      "alt": "necklace r 130 img 4",
+      "category": "necklaces",
+      "price": "₹130",
+      "image": "/assets/images/collection/necklaces/necklace-r-130-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-24",
+      "product-code": "NECKLACES-005",
+      "alt": "necklace r 130 img 5",
+      "category": "necklaces",
+      "price": "₹130",
+      "image": "/assets/images/collection/necklaces/necklace-r-130-img-5.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-25",
+      "product-code": "NECKLACES-006",
+      "alt": "necklace r 140 img 1",
+      "category": "necklaces",
+      "price": "₹140",
+      "image": "/assets/images/collection/necklaces/necklace-r-140-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-26",
+      "product-code": "NECKLACES-007",
+      "alt": "necklace r 140 img 3",
+      "category": "necklaces",
+      "price": "₹140",
+      "image": "/assets/images/collection/necklaces/necklace-r-140-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-27",
+      "product-code": "NECKLACES-008",
+      "alt": "necklace r 170 img 3",
+      "category": "necklaces",
+      "price": "₹170",
+      "image": "/assets/images/collection/necklaces/necklace-r-170-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-28",
+      "product-code": "NECKLACES-009",
+      "alt": "necklace r 199 img 6",
+      "category": "necklaces",
+      "price": "₹199",
+      "image": "/assets/images/collection/necklaces/necklace-r-199-img-6.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-29",
+      "product-code": "NECKLACES-010",
+      "alt": "necklace r 199 img 7",
+      "category": "necklaces",
+      "price": "₹199",
+      "image": "/assets/images/collection/necklaces/necklace-r-199-img-7.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-30",
+      "product-code": "NECKLACES-011",
+      "alt": "necklace r 80 img 1",
+      "category": "necklaces",
+      "price": "₹80",
+      "image": "/assets/images/collection/necklaces/necklace-r-80-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-31",
+      "product-code": "SARI-PIN-001",
+      "alt": "sari pin r 40 img 10",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-10.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-32",
+      "product-code": "SARI-PIN-002",
+      "alt": "sari pin r 40 img 5",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-5.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-33",
+      "product-code": "SARI-PIN-003",
+      "alt": "sari pin r 40 img 6",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-6.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-34",
+      "product-code": "SARI-PIN-004",
+      "alt": "sari pin r 40 img 7",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-7.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-35",
+      "product-code": "SARI-PIN-005",
+      "alt": "sari pin r 40 img 8",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-8.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-36",
+      "product-code": "SARI-PIN-006",
+      "alt": "sari pin r 40 img 9",
+      "category": "sari-pin",
+      "price": "₹40",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-40-img-9.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-37",
+      "product-code": "SARI-PIN-007",
+      "alt": "sari pin r 99 img 1",
+      "category": "sari-pin",
+      "price": "₹99",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-99-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-38",
+      "product-code": "SARI-PIN-008",
+      "alt": "sari pin r 99 img 2",
+      "category": "sari-pin",
+      "price": "₹99",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-99-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-39",
+      "product-code": "SARI-PIN-009",
+      "alt": "sari pin r 99 img 3",
+      "category": "sari-pin",
+      "price": "₹99",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-99-img-3.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-40",
+      "product-code": "SARI-PIN-010",
+      "alt": "sari pin r 99 img 4",
+      "category": "sari-pin",
+      "price": "₹99",
+      "image": "/assets/images/collection/sari-pin/sari-pin-r-99-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-41",
+      "product-code": "SHORT-MS-001",
+      "alt": "short ms r 150 img 1",
+      "category": "short-ms",
+      "price": "₹150",
+      "image": "/assets/images/collection/short-ms/short-ms-r-150-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-42",
+      "product-code": "SHORT-MS-002",
+      "alt": "short ms r 150 img 2",
+      "category": "short-ms",
+      "price": "₹150",
+      "image": "/assets/images/collection/short-ms/short-ms-r-150-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-43",
+      "product-code": "SHORT-MS-003",
+      "alt": "short ms r 160 img 1",
+      "category": "short-ms",
+      "price": "₹160",
+      "image": "/assets/images/collection/short-ms/short-ms-r-160-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-44",
+      "product-code": "SHORT-MS-004",
+      "alt": "short ms r 99 img 1",
+      "category": "short-ms",
+      "price": "₹99",
+      "image": "/assets/images/collection/short-ms/short-ms-r-99-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-45",
+      "product-code": "SHORT-MS-005",
+      "alt": "short ms r 99 img 2",
+      "category": "short-ms",
+      "price": "₹99",
+      "image": "/assets/images/collection/short-ms/short-ms-r-99-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-46",
+      "product-code": "STUD-001",
+      "alt": "stud r 50 img 4",
+      "category": "stud",
+      "price": "₹50",
+      "image": "/assets/images/collection/stud/stud-r-50-img-4.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-47",
+      "product-code": "STUD-002",
+      "alt": "stud r 50 img 5",
+      "category": "stud",
+      "price": "₹50",
+      "image": "/assets/images/collection/stud/stud-r-50-img-5.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-48",
+      "product-code": "STUD-003",
+      "alt": "stud r 70 img 1",
+      "category": "stud",
+      "price": "₹70",
+      "image": "/assets/images/collection/stud/stud-r-70-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-49",
+      "product-code": "SUI-DHAGA-001",
+      "alt": "sui dhaga r 100 img 2",
+      "category": "sui-dhaga",
+      "price": "₹100",
+      "image": "/assets/images/collection/sui-dhaga/sui-dhaga-r-100-img-2.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
+    },
+    {
+      "product-id": "IMG-50",
+      "product-code": "SUI-DHAGA-002",
+      "alt": "sui dhaga r 60 img 1",
+      "category": "sui-dhaga",
+      "price": "₹60",
+      "image": "/assets/images/collection/sui-dhaga/sui-dhaga-r-60-img-1.avif",
+      "seo-information": {
+        "seo-information": {
+          "meta-title": "Statement Ring with Elegant Finish",
+          "meta-description": "Discover our elegant statement ring crafted with a graceful imitation finish. Perfect for weddings and special occasions.",
+          "keywords": "statement ring, bridal jewelry, imitation jewelry, elegant ring"
+        }
+      }
     }
-  },
-  {
-    "id": 2,
-    "product-id": "PROD-002",
-    "product-code": "EAR-PRL-02",
-    "name": "Elegant Drop Earrings",
-    "category": "Earrings",
-    "price": 150,
-    "material": "Imitation Finish & Pearl Details",
-    "purity": "Elegant imitation finish",
-    "weight": "6.2g",
-    "image": "/assets/images/products/ad-top-img-1.avif",
-    "description": "Elegant earrings with delicate floral detailing and a polished finish.",
-    "badge": "Featured",
-    "tags": ["Pearl", "Earrings", "Floral", "Elegant"],
-    "is-featured": true,
-    "is-best-seller": true,
-    "is-new-arrival": false,
-    "seo-information": {
-      "meta-title": "Elegant Drop Earrings with Floral Detail",
-      "meta-description": "Shop elegant drop earrings crafted with delicate floral detailing and a polished imitation finish. Perfect for formal wear.",
-      "keywords": "pearl earrings, drop earrings, floral imitation earrings, pearl jewelry"
-    }
-  },
-  {
-    "id": 3,
-    "product-id": "PROD-003",
-    "product-code": "NLC-IMT-03",
-    "name": "Traditional Necklace",
-    "category": "Necklaces",
-    "price": 199,
-    "material": "Imitation Finish",
-    "purity": "Premium imitation finish",
-    "weight": "12.8g",
-    "image": "/assets/images/products/ad-top-img-2.avif",
-    "description": "Traditional-inspired necklace designed with fine craftsmanship and a graceful finish.",
-    "badge": "New",
-    "tags": ["Traditional", "Necklace", "Wedding Wear", "Classic"],
-    "is-featured": false,
-    "is-best-seller": false,
-    "is-new-arrival": true,
-    "seo-information": {
-      "meta-title": "Traditional Necklace | Fine Craftsmanship",
-      "meta-description": "Explore our beautifully handcrafted traditional necklace made with a polished imitation finish.",
-      "keywords": "traditional necklace, imitation jewelry, wedding jewelry, classic necklace"
-    }
-  },
-  {
-    "id": 4,
-    "product-id": "PROD-004",
-    "product-code": "BGL-IMT-04",
-    "name": "Bangle Set",
-    "category": "Bangles",
-    "price": 550,
-    "material": "Imitation Finish",
-    "purity": "Premium imitation finish",
-    "weight": "24.0g",
-    "image": "/assets/images/products/ad-top-img-3.avif",
-    "description": "Handcrafted bangles with a rich antique-inspired finish.",
-    "badge": "Featured",
-    "tags": ["Bangles", "Antique", "Handcrafted", "Heritage"],
-    "is-featured": true,
-    "is-best-seller": false,
-    "is-new-arrival": false,
-    "seo-information": {
-      "meta-title": "Handcrafted Antique Bangle Set",
-      "meta-description": "Buy beautifully handcrafted bangles featuring a rich, traditional antique-inspired finish.",
-      "keywords": "bangle set, antique bangles, handcrafted jewelry, bridal bangles"
-    }
-  },
-  {
-    "id": 5,
-    "product-id": "PROD-005",
-    "product-code": "NLC-IMT-05",
-    "name": "Decorative Pendant",
-    "category": "Necklaces",
-    "price": 600,
-    "material": "Imitation Finish & Emerald Details",
-    "purity": "Elegant imitation finish",
-    "weight": "5.5g",
-    "image": "/assets/images/products/ad-top-img-4.avif",
-    "description": "A graceful pendant featuring an emerald-inspired centre detail.",
-    "badge": "Popular",
-    "tags": ["Pendant", "Decorative", "Regal", "Statement"],
-    "is-featured": false,
-    "is-best-seller": true,
-    "is-new-arrival": false,
-    "seo-information": {
-      "meta-title": "Regal Decorative Pendant",
-      "meta-description": "Make a statement with this regal decorative pendant featuring a premium quality green-inspired centerpiece.",
-      "keywords": "decorative pendant, statement necklace, imitation jewelry, elegant pendant"
-    }
-  },
-  {
-    "id": 6,
-    "product-id": "PROD-006",
-    "product-code": "BRC-IMT-06",
-    "name": "Statement Bracelet",
-    "category": "Bracelets",
-    "price": 600,
-    "material": "Imitation Finish",
-    "purity": "Elegant imitation finish",
-    "weight": "8.7g",
-    "image": "/assets/images/products/ad-top-img-5.avif",
-    "description": "Sleek bracelet with a polished, contemporary finish.",
-    "badge": "New",
-    "tags": ["Statement Bracelet", "Modern Jewelry", "Sleek", "Contemporary"],
-    "is-featured": false,
-    "is-best-seller": false,
-    "is-new-arrival": true,
-    "seo-information": {
-      "meta-title": "Sleek Statement Bracelet",
-      "meta-description": "Shop our modern sleek bracelet with a polished, contemporary imitation finish.",
-      "keywords": "statement bracelet, modern jewelry, imitation bracelet, contemporary wristwear"
-    }
-  },
-  {
-    "id": 7,
-    "product-id": "PROD-007",
-    "product-code": "BRC-IMT-07",
-    "name": "Statement Bracelet",
-    "category": "Bracelets",
-    "price": 600,
-    "material": "Imitation Finish",
-    "purity": "Elegant imitation finish",
-    "weight": "8.7g",
-    "image": "/assets/images/products/ad-top-img-6.avif",
-    "description": "Sleek bracelet with a polished, contemporary finish.",
-    "badge": "New",
-    "tags": ["Statement Bracelet", "Modern Jewelry", "Sleek", "Contemporary"],
-    "is-featured": false,
-    "is-best-seller": false,
-    "is-new-arrival": true,
-    "seo-information": {
-      "meta-title": "Sleek Statement Bracelet",
-      "meta-description": "Shop our modern sleek bracelet with a polished, contemporary imitation finish.",
-      "keywords": "statement bracelet, modern jewelry, imitation bracelet, contemporary wristwear"
-    }
-  },
-  {
-    "id": 8,
-    "product-id": "PROD-008",
-    "product-code": "BRC-IMT-08",
-    "name": "Statement Bracelet",
-    "category": "Bracelets",
-    "price": 600,
-    "material": "Imitation Finish",
-    "purity": "Elegant imitation finish",
-    "weight": "8.7g",
-    "image": "/assets/images/products/ad-top-img-7.avif",
-    "description": "Sleek bracelet with a polished, contemporary finish.",
-    "badge": "New",
-    "tags": ["Statement Bracelet", "Modern Jewelry", "Sleek", "Contemporary"],
-    "is-featured": false,
-    "is-best-seller": false,
-    "is-new-arrival": true,
-    "seo-information": {
-      "meta-title": "Sleek Statement Bracelet",
-      "meta-description": "Shop our modern sleek bracelet with a polished, contemporary imitation finish.",
-      "keywords": "statement bracelet, modern jewelry, imitation bracelet, contemporary wristwear"
-    }
-  },
-  {
-    "id": 9,
-    "product-id": "PROD-009",
-    "product-code": "BRC-IMT-09",
-    "name": "Statement Bracelet",
-    "category": "Bracelets",
-    "price": 600,
-    "material": "Imitation Finish",
-    "purity": "Elegant imitation finish",
-    "weight": "8.7g",
-    "image": "/assets/images/products/ad-top-img-8.avif",
-    "description": "Sleek bracelet with a polished, contemporary finish.",
-    "badge": "New",
-    "tags": ["Statement Bracelet", "Modern Jewelry", "Sleek", "Contemporary"],
-    "is-featured": false,
-    "is-best-seller": false,
-    "is-new-arrival": true,
-    "seo-information": {
-      "meta-title": "Sleek Statement Bracelet",
-      "meta-description": "Shop our modern sleek bracelet with a polished, contemporary imitation finish.",
-      "keywords": "statement bracelet, modern jewelry, imitation bracelet, contemporary wristwear"
-    }
-  }
-]
+  ]
+}
