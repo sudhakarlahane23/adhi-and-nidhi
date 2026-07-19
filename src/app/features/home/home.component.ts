@@ -60,13 +60,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: '/assets/images/hero/unknown.jpeg',
     },
   ];
-  readonly categoryImages: Record<string, string> = {
-    Bangles: '/assets/images/collection/bangle-1.jpg',
-    Bracelets: '/assets/images/collection/bangle-2.jpg',
-    Earrings: '/assets/images/collection/bangle-3.jpg',
-    Necklaces: '/assets/images/collection/nackles-1.jpg',
-    Rings: '/assets/images/collection/nackles-2.jpg',
-  };
   readonly slides = [
     {
       id: 1,
@@ -149,4 +142,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   goToSlide(index: number): void {
     this.currentSlide.set(index);
   }
+
+  readonly categoryImageMap = computed(() => {
+    const map: Record<string, string> = {};
+
+    this.products().forEach(product => {
+      if (!map[product.category]) {
+        map[product.category] = product.image;
+      }
+    });
+
+    return map;
+  });
 }

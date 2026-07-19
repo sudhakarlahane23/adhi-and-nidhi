@@ -118,7 +118,7 @@
         @for (category of categories(); track category) {
           <div class="col-md-4">
             <div class="category-card">
-              <img [src]="categoryImages[category]" [alt]="category" />
+              <img  [src]="categoryImageMap()[category]" [alt]="category" />
               <div class="category-card-body">
                 <h3>{{ category }}</h3>
                 <p>Exquisite craftsmanship for your everyday sparkle.</p>

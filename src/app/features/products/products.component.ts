@@ -30,7 +30,7 @@ export class ProductsComponent {
 
     return this.products().filter((product) => {
       const matchesCategory = category === 'All' || product.category === category;
-      const matchesTerm = !term || product.name.toLowerCase().includes(term) || product.description.toLowerCase().includes(term);
+      const matchesTerm = !term || product['product-id'].toLowerCase().includes(term) || product['product-code'].toLowerCase().includes(term);
       return matchesCategory && matchesTerm;
     });
   });

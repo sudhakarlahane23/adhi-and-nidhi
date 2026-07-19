@@ -24,16 +24,15 @@
     </div>
 
     <div class="row g-4 mt-2">
-      @for (product of visibleProducts(); track product.id) {
+      @for (product of visibleProducts(); track product['product-id']) {
         <div class="col-lg-3 col-md-6">
           <article class="product-card">
-            <img [src]="product.image" [alt]="product.name" />
+            <!-- <h2>{{ product.image }}</h2> -->
+            <img [src]="product.image" [alt]="product['product-code']" />
             <div class="product-body">
               <span class="badge">{{ product.category }}</span>
-              <h3>{{ product.name }}</h3>
-              <p>{{ product.description }}</p>
               <div class="product-footer">
-                <strong>₹{{ product.price | number }}</strong>
+                <strong>{{ product.price }}</strong>
                 <a class="btn btn-primary" href="https://wa.me/8208315776" target="_blank">WhatsApp</a>
               </div>
             </div>
