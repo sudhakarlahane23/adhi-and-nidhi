@@ -63,4 +63,43 @@ export class ProductsComponent {
       this.currentPage.set(this.currentPage() - 1);
     }
   }
+
+  getWhatsAppLink(product: any): string {
+    const phone = '918208315776';
+    const website = window.location.origin;
+    const imageUrl = website + product.image;
+    const message = `🛍️ *Adhi & Nidhi Jewellery - Product Enquiry*
+
+    Hello,
+
+    I am interested in purchasing the following jewellery.
+
+    ━━━━━━━━━━━━━━━━━━━━━━
+
+    📦 Product ID : ${product['product-id']}
+
+    🏷️ Product Code : ${product['product-code']}
+
+    💎 Category : ${product.category}
+
+    💰 Price : ${product.price}
+
+    🎁 Offer : ${product.offer ?? 'N/A'}
+
+    🖼️ Product Image :
+    ${imageUrl}
+
+    ━━━━━━━━━━━━━━━━━━━━━━
+
+    Please let me know:
+
+    ✅ Availability
+    ✅ Delivery Charges
+    ✅ Payment Options
+    ✅ Estimated Delivery Time
+
+    Thank you.`;
+
+    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  }
 }
