@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../core/services/cart.service';
 
 import { ProductService } from '../../core/services/product.service';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
@@ -16,6 +17,7 @@ import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/w
 })
 export class ProductsComponent {
   private readonly productService = inject(ProductService);
+  private readonly cartService = inject(CartService);
 
   readonly products = this.productService.products;
   readonly categories = this.productService.categories;
@@ -62,6 +64,10 @@ export class ProductsComponent {
     if (this.currentPage() > 1) {
       this.currentPage.set(this.currentPage() - 1);
     }
+  }
+
+  addToCart(product: any): void {
+    this.cartService.addToCart(product);
   }
 
   getWhatsAppLink(product: any): string {
