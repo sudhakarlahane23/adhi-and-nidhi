@@ -1,0 +1,249 @@
+Below prompt for to Cart releated:
+--------------------------------------------
+# Shopping Cart & WhatsApp Order Flow Requirements
+
+Implement a complete shopping cart with order summary, discount calculation, sticky footer, and WhatsApp order placement.
+
+## 1. Cart Item Management
+
+* Display all selected products in the cart.
+* If the same product is added multiple times:
+
+  * Show the quantity.
+  * Show the individual product price.
+  * Show discount in percentage.
+  * Unit Price After Discount
+  * Show the total price for that product.
+
+Example:
+
+| Product       | Qty | Unit Price | Discount | Unit Price After Discount | Total |
+| ------------- | --: | ---------: | -------: | ------------------------: | ----: |
+| Necklace A    |   2 |       ₹250 |      10% |                      ₹225 |  ₹450 |
+| Bangles B     |   2 |       ₹150 |      10% |                      ₹135 |  ₹270 |
+| Mangalsutra C |   1 |       ₹600 |      10% |                      ₹540 |  ₹540 |
+
+
+---
+
+## 2. Order Summary
+
+Display an order summary at the bottom of the cart containing:
+
+* Grand Total (sum of all product totals)
+* Discount Percentage (configurable, e.g., 10%)
+* Discount Amount
+* Final Payable Amount
+
+Example:
+
+```
+Grand Total     ₹1,400
+Discount (10%) -₹140
+----------------------
+Final Amount    ₹1,260
+```
+
+The discount percentage should be configurable from code so it can easily be changed in the future.
+
+---
+
+## 3. Sticky Footer
+
+The Order Summary section must remain visible at the bottom of the slide cart.
+
+Requirements:
+
+* Only the list of cart items should scroll.
+* The footer should always remain fixed (sticky) inside the cart panel.
+* Users should not need to scroll to the bottom of a long cart just to view the total or place the order.
+
+Suggested Layout:
+
+```
+----------------------------------
+Shopping Cart
+----------------------------------
+|                               |
+|   Scrollable Cart Items       |
+|                               |
+|                               |
+|                               |
+----------------------------------
+Grand Total
+Discount
+Final Amount
+
+[ Place Order ]
+----------------------------------
+```
+
+---
+
+## 4. Checkout Form
+
+Before placing the order, collect customer information.
+
+### Required Fields
+
+* Customer Name
+* Delivery Address
+* WhatsApp Number
+
+### Optional Fields
+
+* Alternate Contact Number
+
+  * If different from the WhatsApp number.
+
+* Live Location
+
+  * Allow the customer to share their current location.
+  * This should be completely optional.
+  * It will help during delivery.
+
+---
+
+## 5. WhatsApp Order Submission
+
+When the customer clicks **Place Order**, generate a formatted WhatsApp message containing:
+
+### Customer Details
+
+* Customer Name
+* Delivery Address
+* WhatsApp Number
+* Alternate Contact Number (if provided)
+* Shared Location (if provided)
+
+### Ordered Products
+
+For every product include:
+
+* Product Name
+* Product ID / Product Code
+* Quantity
+* Unit Price
+* Total Price
+* Product Image URL (if available)
+
+### Order Summary
+
+* Grand Total
+* Discount Percentage
+* Discount Amount
+* Final Payable Amount
+
+Example:
+
+```
+*New Order*
+
+Customer:
+Name: John Doe
+
+Address:
+ABC Society,
+Wagholi,
+Pune
+
+WhatsApp:
+9876543210
+
+Alternate Contact:
+9123456780
+
+Location:
+https://maps.google.com/...
+
+--------------------------------
+
+Items
+
+1.
+Necklace A
+ID: AD-001
+Qty: 2
+Price: ₹250
+Total: ₹500
+
+2.
+Bangles B
+ID: BG-021
+Qty: 2
+Price: ₹150
+Total: ₹300
+
+3.
+Mangalsutra C
+ID: MG-110
+Qty: 1
+Price: ₹600
+Total: ₹600
+
+--------------------------------
+
+Grand Total: ₹1,400
+Discount (10%): ₹140
+
+Final Amount: ₹1,260
+
+Thank you!
+```
+
+After generating the message, open WhatsApp using the configured business number with the pre-filled order details.
+
+---
+
+## 6. Technical Requirements
+
+* Implement using Angular best practices.
+* Create reusable interfaces/models for:
+
+  * Cart Item
+  * Customer Details
+  * Order Summary
+* Use a CartService to manage:
+
+  * Add Item
+  * Remove Item
+  * Increase Quantity
+  * Decrease Quantity
+  * Calculate Totals
+  * Calculate Discount
+  * Generate WhatsApp Order Message
+* Keep the discount percentage configurable from a single constant or configuration file.
+* Ensure the implementation is fully responsive for both desktop and mobile devices.
+
+---
+
+## Expected User Flow
+
+1. User adds products to the cart.
+2. Cart groups identical products and updates quantities.
+3. Sticky footer continuously displays:
+
+   * Grand Total
+   * Discount
+   * Final Amount
+4. User clicks **Place Order**.
+5. Customer enters:
+
+   * Name
+   * Address
+   * WhatsApp Number
+   * Alternate Number (optional)
+   * Live Location (optional)
+6. User submits the order.
+7. A formatted WhatsApp message is generated with:
+
+   * Customer details
+   * Ordered products
+   * Product IDs
+   * Quantities
+   * Prices
+   * Discount
+   * Final payable amount
+8. WhatsApp opens with the complete order ready to send.
+
+This prompt is structured as a complete feature specification and is suitable for an AI coding assistant (including ChatGPT) to implement the feature step by step in your Angular project.

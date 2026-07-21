@@ -1,6 +1,10 @@
 <div class="cart-overlay" (click)="close()">
 
-  <aside class="cart-sidebar" (click)="$event.stopPropagation()">
+  <aside
+    class="cart-sidebar"
+    (click)="$event.stopPropagation()">
+
+    <!-- Header -->
 
     <div class="cart-header">
 
@@ -17,59 +21,199 @@
 
     </div>
 
+    <!-- Scrollable Body -->
+
     <div class="cart-body">
 
-      <h3>Total Items : {{ cartService.totalItems() }}</h3>
+      <h3>
+        Total Items : {{ cartService.totalItems() }}
+      </h3>
 
       <hr>
 
-      @for(item of cartService.items(); track item.product['product-id']) {
+      @if(cartService.items().length === 0){
 
-  <div class="cart-item">
+      <div class="empty-cart">
 
-    <img
-      [src]="item.product.image"
-      [alt]="item.product['product-code']">
+        <h3>Your cart is empty.</h3>
 
-    <div class="cart-details">
-
-      <strong>
-        {{ item.product['product-code'] }}
-      </strong>
-
-      <p>{{ item.product.price }}</p>
-
-      <p>Qty : {{ item.quantity }}</p>
-
-      <div class="cart-actions">
-
-        <button
-          class="qty-btn"
-          (click)="cartService.decreaseQuantity(item.product['product-id'])">
-          −
-        </button>
-
-        <span>{{ item.quantity }}</span>
-
-        <button
-          class="qty-btn"
-          (click)="cartService.increaseQuantity(item.product['product-id'])">
-          +
-        </button>
-
-        <button
-          class="remove-btn"
-          (click)="cartService.removeFromCart(item.product['product-id'])">
-          X
-        </button>
+        <p>Add some beautiful jewellery to continue shopping.</p>
 
       </div>
 
+      }
+
+      @else {
+
+      @for(item of cartService.items(); track item.product['product-id']){
+
+      <div class="cart-item">
+
+        <img
+          [src]="item.product.image"
+          [alt]="item.product['product-code']">
+
+        <div class="cart-details">
+
+          <h4>
+
+            {{ item.product['product-code'] }}
+
+          </h4>
+
+          <table class="price-table">
+
+            <tr>
+
+              <td>Quantity</td>
+
+              <td>{{ item.quantity }}</td>
+
+            </tr>
+
+            <tr>
+
+              <td>Unit Price</td>
+
+              <td>
+                ₹{{ getUnitPrice(item.product) }}
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Discount</td>
+
+              <td>
+                {{ discountPercentage }}%
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>Unit Price After Discount</td>
+
+              <td>
+
+                ₹{{ getDiscountedPrice(item.product) }}
+
+              </td>
+
+            </tr>
+
+            <tr class="total-row">
+
+              <td>Total</td>
+
+              <td>
+
+                ₹{{ getItemTotal(item) }}
+
+              </td>
+
+            </tr>
+
+          </table>
+
+          <div class="cart-actions">
+
+            <button
+              class="qty-btn"
+              (click)="cartService.decreaseQuantity(item.product['product-id'])">
+
+              −
+
+            </button>
+
+            <span class="qty">
+
+              {{ item.quantity }}
+
+            </span>
+
+            <button
+              class="qty-btn"
+              (click)="cartService.increaseQuantity(item.product['product-id'])">
+
+              +
+
+            </button>
+
+            <button
+              class="remove-btn"
+              (click)="cartService.removeFromCart(item.product['product-id'])">
+
+              Remove
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      }
+
+      }
+
     </div>
 
-  </div>
+    <!-- Sticky Footer -->
 
-}
+    <div class="cart-footer">
+
+      <div class="summary-row">
+
+        <span>Grand Total</span>
+
+        <strong>
+
+          ₹{{ getGrandTotal() }}
+
+        </strong>
+
+      </div>
+
+      <div class="summary-row">
+
+        <span>
+
+          Discount ({{ discountPercentage }}%)
+
+        </span>
+
+        <strong class="discount">
+
+          -₹{{ getDiscountAmount() }}
+
+        </strong>
+
+      </div>
+
+      <hr>
+
+      <div class="summary-row final-amount">
+
+        <span>Final Amount</span>
+
+        <strong>
+
+          ₹{{ getFinalAmount() }}
+
+        </strong>
+
+      </div>
+
+      <button
+        class="place-order-btn"
+        (click)="placeOrderOnWhatsApp()">
+
+        Place Order on WhatsApp
+
+      </button>
 
     </div>
 
