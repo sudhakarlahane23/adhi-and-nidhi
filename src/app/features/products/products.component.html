@@ -42,9 +42,15 @@
 
             <div class="product-footer">
               <strong>{{ product.price }}</strong>
-              <a class="btn btn-primary" [href]="getWhatsAppLink(product)" target="_blank">
+
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="addToCart(product)">
+
                 Add to Cart
-              </a>
+
+              </button>
             </div>
 
           </div>

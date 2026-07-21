@@ -6,6 +6,11 @@
   backdrop-filter: blur(3px);
 }
 
+.cart-btn {
+  text-align: left;
+  padding-left: 0;
+}
+
 .site-header {
   padding: 0.875rem 0;
   background: rgba(250, 248, 244, 0.97);
@@ -35,7 +40,7 @@
 
 .brand strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
 }
 
@@ -198,10 +203,6 @@
     background: transparent;
     z-index: auto;
   }
-
-  // .site-nav a {
-  //   padding: 0;
-  // }
 }
 
 @media (min-width: 992px) {

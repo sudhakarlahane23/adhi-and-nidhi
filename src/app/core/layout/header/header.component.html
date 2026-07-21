@@ -1,5 +1,5 @@
 @if (menuOpen) {
-  <div class="mobile-backdrop" (click)="closeMenu()"></div>
+<div class="mobile-backdrop" (click)="closeMenu()"></div>
 }
 
 <header class="site-header">
@@ -18,35 +18,53 @@
       </div>
 
       <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
-        <button
-          class="menu-toggle"
-          type="button"
-          (click)="toggleMenu()"
-          [attr.aria-expanded]="menuOpen"
-          [class.is-active]="menuOpen"
-          aria-controls="site-navigation"
-          aria-label="Toggle navigation"
-        >
+        <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen"
+          [class.is-active]="menuOpen" aria-controls="site-navigation" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <nav id="site-navigation" class="site-nav" [class.is-open]="menuOpen">
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
-          <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">Products</a>
-          <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
-          <button class="btn btn-primary whats-app" type="button" (click)="openWhatsappPopup()">Enquire Now</button>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+            Home
+          </a>
+          <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">
+            Products
+          </a>
+          <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+            Contact
+          </a>
+          <button class="btn btn-outline cart-btn" type="button" (click)="openCart()">
+            🛒 Cart
+            @if(totalItems() > 0){
+            <span class="cart-count">
+              {{ totalItems() }}
+            </span>
+            }
+          </button>
+          <button class="btn btn-primary whats-app" type="button" (click)="openWhatsappPopup()">
+            Enquire Now
+          </button>
         </nav>
       </div>
     </div>
   </div>
 </header>
 
+@if(showCart){
+
+  <app-cart-sidebar
+      (closed)="closeCart()">
+  </app-cart-sidebar>
+
+}
+
 @if (showWhatsappPopup) {
-  <div class="whatsapp-popup-overlay" (click)="closeWhatsappPopup()">
-    <div class="whatsapp-popup-panel" role="dialog" aria-modal="true" aria-labelledby="whatsapp-enquiry-title" (click)="$event.stopPropagation()">
-      <app-whatsapp-enquiry (closed)="closeWhatsappPopup()"></app-whatsapp-enquiry>
-    </div>
+<div class="whatsapp-popup-overlay" (click)="closeWhatsappPopup()">
+  <div class="whatsapp-popup-panel" role="dialog" aria-modal="true" aria-labelledby="whatsapp-enquiry-title"
+    (click)="$event.stopPropagation()">
+    <app-whatsapp-enquiry (closed)="closeWhatsappPopup()"></app-whatsapp-enquiry>
   </div>
+</div>
 }

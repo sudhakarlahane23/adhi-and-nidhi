@@ -1,0 +1,480 @@
+/* ==========================================
+   Overlay
+========================================== */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  z-index: 9998;
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+.cart-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 430px;
+  max-width: 100%;
+  height: 100%;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -10px 0 30px rgba(0, 0, 0, .18);
+
+  animation: slideIn .25s ease;
+}
+
+@keyframes slideIn {
+
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+/* ==========================================
+   Header
+========================================== */
+
+.cart-header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #ececec;
+
+  background: #ffffff;
+
+  flex-shrink: 0;
+
+}
+
+.cart-header h2 {
+
+  margin: 0;
+
+  color: #6603a8;
+
+  font-size: 22px;
+
+}
+
+.close-btn {
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  background: #f3f3f3;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: .25s;
+
+}
+
+.close-btn:hover {
+
+  background: #6603a8;
+
+  color: #ffffff;
+
+}
+
+/* ==========================================
+   Scrollable Body
+========================================== */
+
+.cart-body {
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 20px;
+
+  background: #fafafa;
+
+}
+
+.cart-body h3 {
+
+  margin-top: 0;
+
+  color: #444;
+
+}
+
+/* ==========================================
+   Empty Cart
+========================================== */
+
+.empty-cart {
+
+  text-align: center;
+
+  padding: 60px 20px;
+
+  color: #777;
+
+}
+
+.empty-cart h3 {
+
+  color: #6603a8;
+
+}
+
+/* ==========================================
+   Product Card
+========================================== */
+
+.cart-item {
+
+  display: flex;
+
+  gap: 16px;
+
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 16px;
+
+  border: 1px solid #ececec;
+
+  transition: .25s;
+
+}
+
+.cart-item:hover {
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+}
+
+.cart-item img {
+
+  width: 90px;
+
+  height: 90px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  border: 1px solid #ddd;
+
+}
+
+.cart-details {
+
+  flex: 1;
+
+}
+
+.cart-details h4 {
+
+  margin: 0 0 12px;
+
+  color: #6603a8;
+
+  font-size: 15px;
+
+  word-break: break-word;
+
+}
+
+/* ==========================================
+   Price Table
+========================================== */
+
+.price-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-bottom: 15px;
+
+}
+
+.price-table td {
+
+  padding: 6px 0;
+
+  font-size: 14px;
+
+}
+
+.price-table td:first-child {
+
+  color: #666;
+
+}
+
+.price-table td:last-child {
+
+  text-align: right;
+
+  font-weight: 600;
+
+}
+
+.total-row {
+
+  border-top: 1px dashed #ddd;
+
+}
+
+.total-row td {
+
+  padding-top: 10px;
+
+  font-size: 15px;
+
+  font-weight: bold;
+
+  color: #6603a8;
+
+}
+
+/* ==========================================
+   Cart Actions
+========================================== */
+
+.cart-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+.qty-btn {
+
+  width: 34px;
+
+  height: 34px;
+
+  border: none;
+
+  background: #6603a8;
+
+  color: white;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: .25s;
+
+}
+
+.qty-btn:hover {
+
+  background: #520187;
+
+}
+
+.qty {
+
+  min-width: 24px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+}
+
+.remove-btn {
+
+  margin-left: auto;
+
+  border: none;
+
+  background: #d32f2f;
+
+  color: white;
+
+  padding: 8px 16px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+}
+
+.remove-btn:hover {
+
+  background: #b71c1c;
+
+}
+
+/* ==========================================
+   Sticky Footer
+========================================== */
+
+.cart-footer {
+
+  position: sticky;
+
+  bottom: 0;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e5e5e5;
+
+  padding: 18px 20px;
+
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, .08);
+
+  flex-shrink: 0;
+
+}
+
+.summary-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+
+  font-size: 15px;
+
+}
+
+.summary-row strong {
+
+  font-size: 16px;
+
+}
+
+.discount {
+
+  color: #d32f2f;
+
+}
+
+.final-amount {
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  color: #6603a8;
+
+  margin-bottom: 18px;
+
+}
+
+.place-order-btn {
+
+  width: 100%;
+
+  border: none;
+
+  background: #25D366;
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .25s;
+
+}
+
+.place-order-btn:hover {
+
+  background: #1fa955;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 768px) {
+
+  .cart-sidebar {
+
+    width: 100%;
+
+  }
+
+  .cart-item {
+
+    flex-direction: column;
+
+    align-items: center;
+
+  }
+
+  .cart-item img {
+
+    width: 120px;
+
+    height: 120px;
+
+  }
+
+  .cart-details {
+
+    width: 100%;
+
+  }
+
+  .cart-actions {
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+  }
+
+  .remove-btn {
+
+    margin-left: 0;
+
+  }
+
+}
