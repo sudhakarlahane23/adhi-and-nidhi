@@ -44,7 +44,7 @@ export class CartSidebarComponent {
   /**
    * Minimum final amount for free delivery
    */
-  readonly freeDeliveryThreshold = 600;
+  readonly freeDeliveryThreshold = 899;
 
   /**
    * Controls whether the "Customer Details" form overlay is visible.
