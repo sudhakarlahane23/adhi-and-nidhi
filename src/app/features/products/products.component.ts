@@ -6,7 +6,6 @@ import { ProductService } from '../../core/services/product.service';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { FooterComponent } from '../../core/layout/footer/footer.component';
-import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/whatsapp-float.component';
 
 @Component({
   selector: 'app-products',
@@ -16,7 +15,6 @@ import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/w
     AnnouncementBarComponent,
     HeaderComponent,
     FooterComponent,
-    WhatsappFloatComponent,
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',

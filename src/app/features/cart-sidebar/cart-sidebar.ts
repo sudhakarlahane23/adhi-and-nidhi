@@ -22,9 +22,29 @@ export class CartSidebarComponent {
 
   private readonly fb = inject(FormBuilder);
 
+  /**
+   * Change this anytime.
+   * Example:
+   * 10 = 10%
+   * 20 = 20%
+   */
   readonly discountPercentage = 10;
 
+  /**
+   * Business WhatsApp Number
+   * Country Code + Mobile Number
+   */
   readonly whatsappNumber = '918208315776';
+
+  /**
+   * Base website URL — used to build absolute image links in the WhatsApp message
+   */
+  readonly websiteUrl = 'https://adhiandnidhijewellery.com';
+
+  /**
+   * Minimum final amount for free delivery
+   */
+  readonly freeDeliveryThreshold = 600;
 
   /**
    * Controls whether the "Customer Details" form overlay is visible.
@@ -33,21 +53,38 @@ export class CartSidebarComponent {
    */
   showCheckoutForm = false;
 
+  /**
+   * Location
+   */
   locationShared = false;
+
   latitude: number | null = null;
+
   longitude: number | null = null;
+
   isSharingLocation = false;
 
+  /**
+   * Checkout Form
+   */
   checkoutForm: FormGroup = this.fb.group({
     customerName: ['', [Validators.required, Validators.minLength(3)]],
+
     deliveryAddress: ['', [Validators.required, Validators.minLength(10)]],
+
     whatsappNumber: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
+
     alternateNumber: ['', [Validators.pattern(/^$|^[6-9]\d{9}$/)]],
+
+    utrNumber: ['', [Validators.required, Validators.minLength(8)]],
+
+    deliveryChargesConfirmed: [false, Validators.requiredTrue],
+
     confirmOrder: [false, Validators.requiredTrue],
   });
 
   /**
-   * Close the whole cart sidebar (emits to parent)
+   * Close Cart Sidebar
    */
   close(): void {
     this.closed.emit();
@@ -73,6 +110,9 @@ export class CartSidebarComponent {
     this.showCheckoutForm = false;
   }
 
+  /**
+   * Share Current Location
+   */
   shareLocation(): void {
     if (!navigator.geolocation) {
       alert('Geolocation is not supported.');
@@ -89,42 +129,70 @@ export class CartSidebarComponent {
         this.locationShared = true;
         this.isSharingLocation = false;
       },
+
       () => {
         this.isSharingLocation = false;
+
         alert('Unable to fetch your location.');
       },
     );
   }
 
+  /**
+   * Convert "₹250" -> 250
+   */
   getUnitPrice(product: Product): number {
     return Number(product.price.replace('₹', '').replace(/,/g, '').trim());
   }
 
+  /**
+   * Price after discount
+   */
   getDiscountedPrice(product: Product): number {
     const price = this.getUnitPrice(product);
+
     return Math.round(price - (price * this.discountPercentage) / 100);
   }
 
+  /**
+   * Total price of one cart item
+   */
   getItemTotal(item: any): number {
     return this.getDiscountedPrice(item.product) * item.quantity;
   }
 
+  /**
+   * Original total before discount
+   */
   getGrandTotal(): number {
     return this.cartService.items().reduce((total, item) => {
       return total + this.getUnitPrice(item.product) * item.quantity;
     }, 0);
   }
 
+  /**
+   * Total discount amount
+   */
   getDiscountAmount(): number {
     return Math.round((this.getGrandTotal() * this.discountPercentage) / 100);
   }
 
+  /**
+   * Final payable amount
+   */
   getFinalAmount(): number {
     return this.getGrandTotal() - this.getDiscountAmount();
   }
 
   /**
-   * Step 2: User fills the form and confirms -> actually build message & open WhatsApp
+   * Whether the order qualifies for free delivery
+   */
+  isDeliveryFree(): boolean {
+    return this.getFinalAmount() >= this.freeDeliveryThreshold;
+  }
+
+  /**
+   * Step 2: User fills the form and confirms -> build message & open WhatsApp
    */
   confirmAndSendOrder(): void {
     if (this.cartService.items().length === 0) {
@@ -133,20 +201,27 @@ export class CartSidebarComponent {
 
     if (this.checkoutForm.invalid) {
       this.checkoutForm.markAllAsTouched();
+
       return;
     }
 
     const customer = this.checkoutForm.getRawValue();
+
     const orderId = 'ANJ-' + Date.now();
 
     let message = '';
 
     message += '🛍️ *Adhi & Nidhi Jewellery Order*';
     message += '\n\n';
+
     message += `Date : ${new Date().toLocaleString('en-IN')}\n\n`;
+
     message += '\n\n';
+
     message += `Order No : ${orderId}\n`;
+
     message += '\n\n';
+
     message += '============================';
     message += '\n';
     message += '*CUSTOMER DETAILS*';
@@ -178,13 +253,23 @@ export class CartSidebarComponent {
     message += '\n\n';
 
     this.cartService.items().forEach((item, index) => {
-      message += `${index + 1}. ${item.product['product-code']}\n`;
+
+      // Strip any leading slash from the image path so we never get
+      // a double slash when joining with websiteUrl.
+      const imageUrl = `${this.websiteUrl}/${item.product.image.replace(/^\/+/, '')}`;
+
+      message += `🛍️ Product ${index + 1}\n`;
+      message += `━━━━━━━━━━━━━━━━━━━━━━\n`;
+
+      message += `Product Code : ${item.product['product-code']}\n`;
       message += `Quantity : ${item.quantity}\n`;
       message += `Unit Price : ₹${this.getUnitPrice(item.product)}\n`;
       message += `Discount : ${this.discountPercentage}%\n`;
       message += `Price After Discount : ₹${this.getDiscountedPrice(item.product)}\n`;
       message += `Item Total : ₹${this.getItemTotal(item)}\n`;
-      message += '\n';
+
+      message += `\n📷 Product Image\n`;
+      message += `${imageUrl}\n\n`;
     });
 
     message += '\n';
@@ -197,9 +282,18 @@ export class CartSidebarComponent {
     message += '============================';
     message += '\n';
 
+    message += `Payment Status : Paid ✅\n`;
+    message += `UPI Transaction ID : ${customer.utrNumber}\n\n`;
+
     message += `Grand Total : ₹${this.formatPrice(this.getGrandTotal())}\n`;
     message += `Discount (${this.discountPercentage}%) : -₹${this.getDiscountAmount()}\n`;
     message += `Final Amount : ₹${this.getFinalAmount()}\n`;
+
+    if (this.isDeliveryFree()) {
+      message += `🚚 Delivery : FREE (order ₹${this.freeDeliveryThreshold}+)\n`;
+    } else {
+      message += `🚚 Delivery Charges : Extra, based on distance (payable separately)\n`;
+    }
 
     message += '\n';
     message += '============================';
@@ -210,7 +304,7 @@ export class CartSidebarComponent {
 
     window.open(url, '_blank');
 
-    // Close the form after sending (optional — remove this line if you want it to stay open)
+    // Close the form after sending
     this.showCheckoutForm = false;
 
     this.cartService.clearCart();
