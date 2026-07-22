@@ -1,7 +1,8 @@
 import { Injectable, computed, signal } from '@angular/core';
+import { Product } from '../../models/product.model'; // <-- adjust path if needed
 
 export interface CartItem {
-  product: any;
+  product: Product;   // <-- was: string
   quantity: number;
 }
 
@@ -28,7 +29,7 @@ export class CartService {
     this.saveCart();
   }
 
-  addToCart(product: any): void {
+  addToCart(product: Product): void {
 
     const cart = [...this.items()];
 
@@ -103,7 +104,7 @@ export class CartService {
     localStorage.removeItem(this.storageKey);
   }
 
-  private getPrice(price: any): number {
+  private getPrice(price: string): number {
 
     if (typeof price === 'number') {
       return price;

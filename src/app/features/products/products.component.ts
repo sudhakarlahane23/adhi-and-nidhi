@@ -11,7 +11,13 @@ import { WhatsappFloatComponent } from '../../shared/components/whatsapp-float/w
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, AnnouncementBarComponent, HeaderComponent, FooterComponent, WhatsappFloatComponent],
+  imports: [
+    CommonModule,
+    AnnouncementBarComponent,
+    HeaderComponent,
+    FooterComponent,
+    WhatsappFloatComponent,
+  ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
@@ -32,12 +38,17 @@ export class ProductsComponent {
 
     return this.products().filter((product) => {
       const matchesCategory = category === 'All' || product.category === category;
-      const matchesTerm = !term || product['product-id'].toLowerCase().includes(term) || product['product-code'].toLowerCase().includes(term);
+      const matchesTerm =
+        !term ||
+        product['product-id'].toLowerCase().includes(term) ||
+        product['product-code'].toLowerCase().includes(term);
       return matchesCategory && matchesTerm;
     });
   });
 
-  readonly totalPages = computed(() => Math.max(1, Math.ceil(this.filteredProducts().length / this.pageSize)));
+  readonly totalPages = computed(() =>
+    Math.max(1, Math.ceil(this.filteredProducts().length / this.pageSize)),
+  );
 
   readonly visibleProducts = computed(() => {
     const start = (this.currentPage() - 1) * this.pageSize;
