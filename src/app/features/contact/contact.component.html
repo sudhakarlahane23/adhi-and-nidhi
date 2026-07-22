@@ -2,41 +2,138 @@
 <app-header></app-header>
 
 <main class="page-shell">
-  <section class="container py-4">
-    <div class="row g-5">
+  <section class="container py-5">
+    <div class="row g-5 align-items-start">
+
+      <!-- Left Section -->
       <div class="col-lg-7">
-        <div class="page-heading">
-          <p class="eyebrow">Contact</p>
-          <h1>Visit our showroom or book a private consultation</h1>
-          <p>We’d love to help you find the right piece for a wedding, festival, or celebration.</p>
+
+        <div class="page-heading mb-4">
+          <p class="eyebrow">CONTACT US</p>
+
+          <h1>We're Here to Help</h1>
+
+          <p class="lead">
+            Have questions about our jewellery, product availability, pricing,
+            gifting, or bulk orders? We'd love to hear from you.
+          </p>
         </div>
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.566988561722!2d77.594562!3d12.971599!2m3!1f0!2f0!3f0!3m2!1m1!2s!5e0!3m2!1m1!2s!5e0!4v1710000000000!5m2!1m1!2s" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="col-lg-5">
+
         <div class="contact-card">
-          <h3>Send us a message</h3>
+          <h3 class="mb-4">Send us a Message</h3>
+
           <form>
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Email address" />
-            <textarea rows="4" placeholder="Tell us about your jewellery needs"></textarea>
-            <button type="button" class="btn btn-primary">Submit</button>
+
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Full Name *">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="Mobile Number *">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Subject *">
+            </div>
+
+            <div class="mb-4">
+              <textarea
+                rows="6"
+                class="form-control"
+                placeholder="Tell us how we can help you..."></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100">
+              Send Message
+            </button>
+
           </form>
         </div>
-        <div class="contact-card">
-          <h3>Business details</h3>
-          <ul>
-            <li><strong>Phone:</strong> +91 8208315776</li>
-            <li><strong>Email:</strong> hello@adhiandnidhijewellery.com</li>
-            <li><strong>WhatsApp:</strong> +91 8208315776</li>
-            <li><strong>Social:</strong> Instagram • Facebook • Pinterest</li>
-          </ul>
-        </div>
+
       </div>
+
+      <!-- Right Section -->
+      <div class="col-lg-5">
+
+        <div class="contact-card mb-4">
+
+          <h3 class="mb-4">Get in Touch</h3>
+
+          <div class="contact-item mb-4">
+            <h6>📞 Phone</h6>
+            <a href="tel:+918208315776">
+              +91 8208315776
+            </a>
+          </div>
+
+          <div class="contact-item mb-4">
+            <h6>💬 WhatsApp</h6>
+            <a
+              href="https://wa.me/918208315776"
+              target="_blank">
+              Chat with us
+            </a>
+          </div>
+
+          <div class="contact-item mb-4">
+            <h6>✉️ Email</h6>
+            <a href="mailto:lahane.ashwini26@gmail.com">
+              lahane.ashwini26@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <h6>🕘 Business Hours</h6>
+            <p class="mb-0">
+              Monday – Sunday<br>
+              9:00 AM – 9:00 PM
+            </p>
+          </div>
+
+        </div>
+
+        <div class="contact-card text-center">
+
+          <h3>Need a Faster Response?</h3>
+
+          <p>
+            Send us a message on WhatsApp for quick assistance regarding
+            products, pricing, or orders.
+          </p>
+
+          <a
+            href="https://wa.me/918208315776"
+            target="_blank"
+            class="btn btn-success w-100">
+            Chat on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
 </main>
 
 <app-footer></app-footer>
-<app-whatsapp-float></app-whatsapp-float>

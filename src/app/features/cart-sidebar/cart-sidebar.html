@@ -13,71 +13,59 @@
       <hr />
 
       @if (cartService.items().length === 0) {
-        <div class="empty-cart">
-          <h3>Your cart is empty.</h3>
-          <p>Add some beautiful jewellery to continue shopping.</p>
-        </div>
+      <div class="empty-cart">
+        <h3>Your cart is empty.</h3>
+        <p>Add some beautiful jewellery to continue shopping.</p>
+      </div>
       } @else {
-        @for (item of cartService.items(); track item.product['product-id']) {
-          <div class="cart-item">
-            <img [src]="item.product.image" [alt]="item.product['product-code']" />
+      @for (item of cartService.items(); track item.product['product-id']) {
+      <div class="cart-item">
+        <img [src]="item.product.image" [alt]="item.product['product-code']" />
 
-            <div class="cart-details">
-              <h4>{{ item.product['product-code'] }}</h4>
+        <div class="cart-details">
+          <h4>{{ item.product['product-code'] }}</h4>
 
-              <table class="price-table">
-                <tr>
-                  <td>Quantity</td>
-                  <td>{{ item.quantity }}</td>
-                </tr>
-                <tr>
-                  <td>Unit Price</td>
-                  <td>₹{{ getUnitPrice(item.product) }}</td>
-                </tr>
-                <tr>
-                  <td>Discount</td>
-                  <td>{{ discountPercentage }}%</td>
-                </tr>
-                <tr>
-                  <td>Unit Price After Discount</td>
-                  <td>₹{{ getDiscountedPrice(item.product) }}</td>
-                </tr>
-                <tr class="total-row">
-                  <td>Total</td>
-                  <td>₹{{ getItemTotal(item) }}</td>
-                </tr>
-              </table>
+          <table class="price-table">
+            <tr>
+              <td>Quantity</td>
+              <td>{{ item.quantity }}</td>
+            </tr>
+            <tr>
+              <td>Unit Price</td>
+              <td>₹{{ getUnitPrice(item.product) }}</td>
+            </tr>
+            <tr>
+              <td>Discount</td>
+              <td>{{ discountPercentage }}%</td>
+            </tr>
+            <tr>
+              <td>Unit Price After Discount</td>
+              <td>₹{{ getDiscountedPrice(item.product) }}</td>
+            </tr>
+            <tr class="total-row">
+              <td>Total</td>
+              <td>₹{{ getItemTotal(item) }}</td>
+            </tr>
+          </table>
 
-              <div class="cart-actions">
-                <button
-                  class="qty-btn"
-                  type="button"
-                  (click)="cartService.decreaseQuantity(item.product['product-id'])"
-                >
-                  −
-                </button>
+          <div class="cart-actions">
+            <button class="qty-btn" type="button" (click)="cartService.decreaseQuantity(item.product['product-id'])">
+              −
+            </button>
 
-                <span class="qty">{{ item.quantity }}</span>
+            <span class="qty">{{ item.quantity }}</span>
 
-                <button
-                  class="qty-btn"
-                  type="button"
-                  (click)="cartService.increaseQuantity(item.product['product-id'])"
-                >
-                  +
-                </button>
+            <button class="qty-btn" type="button" (click)="cartService.increaseQuantity(item.product['product-id'])">
+              +
+            </button>
 
-                <button
-                  class="remove-btn"
-                  type="button"
-                  (click)="cartService.removeFromCart(item.product['product-id'])"
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
+            <button class="remove-btn" type="button" (click)="cartService.removeFromCart(item.product['product-id'])">
+              Remove
+            </button>
           </div>
-        }
+        </div>
+      </div>
+      }
       }
     </div>
 
@@ -100,12 +88,8 @@
         <strong>₹{{ getFinalAmount() }}</strong>
       </div>
 
-      <button
-        class="place-order-btn"
-        type="button"
-        [disabled]="cartService.items().length === 0"
-        (click)="openCheckoutForm()"
-      >
+      <button class="place-order-btn" type="button" [disabled]="cartService.items().length === 0"
+        (click)="openCheckoutForm()">
         Place Order on WhatsApp
       </button>
     </div>
@@ -117,92 +101,177 @@
      Opens on top of the cart when "Place Order" is clicked
 ========================== -->
 @if (showCheckoutForm) {
-  <div class="checkout-overlay" (click)="closeCheckoutForm()">
-    <aside class="checkout-modal" (click)="$event.stopPropagation()">
-      <div class="checkout-header">
-        <h2>Delivery Details</h2>
-        <button class="close-btn" type="button" (click)="closeCheckoutForm()">✕</button>
-      </div>
+<div class="checkout-overlay" (click)="closeCheckoutForm()">
+  <aside class="checkout-modal" (click)="$event.stopPropagation()">
+    <div class="checkout-header">
+      <h2>Delivery Details</h2>
+      <button class="close-btn" type="button" (click)="closeCheckoutForm()">✕</button>
+    </div>
 
-      <div class="checkout-body">
-        <form [formGroup]="checkoutForm">
-          <!-- Customer Name -->
-          <div class="form-group">
-            <label for="customerName">Customer Name <span>*</span></label>
-            <input id="customerName" type="text" formControlName="customerName" placeholder="Enter your full name" />
-            @if (checkoutForm.get('customerName')?.invalid && checkoutForm.get('customerName')?.touched) {
-              <small class="error">Customer name is required.</small>
-            }
-          </div>
-
-          <!-- Delivery Address -->
-          <div class="form-group">
-            <label for="deliveryAddress">Delivery Address <span>*</span></label>
-            <textarea
-              id="deliveryAddress"
-              rows="4"
-              formControlName="deliveryAddress"
-              placeholder="House No, Street, Area, City, PIN Code"
-            ></textarea>
-            @if (checkoutForm.get('deliveryAddress')?.invalid && checkoutForm.get('deliveryAddress')?.touched) {
-              <small class="error">Delivery address is required.</small>
-            }
-          </div>
-
-          <!-- WhatsApp Number -->
-          <div class="form-group">
-            <label for="whatsappNumber">WhatsApp Number <span>*</span></label>
-            <input
-              id="whatsappNumber"
-              type="tel"
-              maxlength="10"
-              formControlName="whatsappNumber"
-              placeholder="10 digit mobile number"
-            />
-            @if (checkoutForm.get('whatsappNumber')?.invalid && checkoutForm.get('whatsappNumber')?.touched) {
-              <small class="error">Enter a valid 10 digit WhatsApp number.</small>
-            }
-          </div>
-
-          <!-- Alternate Number -->
-          <div class="form-group">
-            <label for="alternateNumber">Alternate Contact Number</label>
-            <input id="alternateNumber" type="tel" maxlength="10" formControlName="alternateNumber" placeholder="Optional" />
-          </div>
-
-          <!-- Live Location -->
-          <div class="form-group">
-            <label for="shareLocation">Live Location (Optional)</label>
-            <button id="shareLocation" type="button" class="location-btn" (click)="shareLocation()">
-              {{ locationShared ? '✓ Location Shared' : 'Share Current Location' }}
-            </button>
-          </div>
-
-          <!-- Confirmation -->
-          <div class="confirm-order">
-            <label>
-              <input type="checkbox" formControlName="confirmOrder" />
-              I confirm that the above delivery details are correct.
-            </label>
-          </div>
-        </form>
-      </div>
-
-      <div class="checkout-footer">
-        <div class="summary-row final-amount">
-          <span>Final Amount</span>
-          <strong>₹{{ getFinalAmount() }}</strong>
+    <div class="checkout-body">
+      <form [formGroup]="checkoutForm">
+        <!-- Customer Name -->
+        <div class="form-group">
+          <label for="customerName">Customer Name <span>*</span></label>
+          <input id="customerName" type="text" formControlName="customerName" placeholder="Enter your full name" />
+          @if (checkoutForm.get('customerName')?.invalid && checkoutForm.get('customerName')?.touched) {
+          <small class="error">Customer name is required.</small>
+          }
         </div>
 
-        <button
-          class="place-order-btn"
-          type="button"
-          [disabled]="checkoutForm.invalid"
-          (click)="confirmAndSendOrder()"
-        >
-          Confirm & Send via WhatsApp
-        </button>
+        <!-- Delivery Address -->
+        <div class="form-group">
+          <label for="deliveryAddress">Delivery Address <span>*</span></label>
+          <textarea id="deliveryAddress" rows="4" formControlName="deliveryAddress"
+            placeholder="House No, Street, Area, City, PIN Code"></textarea>
+          @if (checkoutForm.get('deliveryAddress')?.invalid && checkoutForm.get('deliveryAddress')?.touched) {
+          <small class="error">Delivery address is required.</small>
+          }
+        </div>
+
+        <!-- WhatsApp Number -->
+        <div class="form-group">
+          <label for="whatsappNumber">WhatsApp Number <span>*</span></label>
+          <input id="whatsappNumber" type="tel" maxlength="10" formControlName="whatsappNumber"
+            placeholder="10 digit mobile number" />
+          @if (checkoutForm.get('whatsappNumber')?.invalid && checkoutForm.get('whatsappNumber')?.touched) {
+          <small class="error">Enter a valid 10 digit WhatsApp number.</small>
+          }
+        </div>
+
+        <!-- Alternate Number -->
+        <div class="form-group">
+          <label for="alternateNumber">Alternate Contact Number</label>
+          <input id="alternateNumber" type="tel" maxlength="10" formControlName="alternateNumber"
+            placeholder="Optional" />
+        </div>
+
+        <!-- =========================
+              UPI Payment
+          ========================== -->
+        <div class="payment-section">
+          <h3>💳 Pay Online (Recommended)</h3>
+
+          <p class="payment-note">
+            Scan the QR code using any UPI app like
+            <strong>PhonePe, Google Pay, Paytm or BHIM</strong>
+            and complete the payment before placing your order.
+          </p>
+
+          <div class="payment-info">
+            <strong>✅ Secure UPI Payment</strong>
+            <ul>
+              <li>Scan QR using any UPI App.</li>
+              <li>Complete the payment.</li>
+              <li>Enter the UTR Number below.</li>
+              <li>Your order will be confirmed after payment verification.</li>
+            </ul>
+          </div>
+
+          <!-- QR Code -->
+          <div class="qr-wrapper">
+            <img
+              src="assets/images/QR-Code/phonePay.jpeg"
+              alt="PhonePe QR Code"
+              class="qr-image"
+            />
+          </div>
+
+          <p class="qr-caption">
+            Scan this QR code using <strong>PhonePe, Google Pay, Paytm, BHIM</strong> or any UPI app to complete your payment.
+          </p>
+
+          <div class="upi-summary">
+            <div>
+              <span>Amount to Pay</span>
+              <strong>₹{{ getFinalAmount() }}</strong>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="utrNumber">
+              UPI Transaction ID (UTR Number)
+              <span>*</span>
+            </label>
+            <input id="utrNumber" type="text" maxlength="20" formControlName="utrNumber"
+              placeholder="Example : 432198765432" />
+
+            @if (checkoutForm.get('utrNumber')?.invalid &&
+            checkoutForm.get('utrNumber')?.touched) {
+            <small class="error">
+              Please enter your payment UTR Number.
+            </small>
+            }
+          </div>
+
+          <small class="payment-help">
+            After payment, enter the UTR number received in your UPI app.
+          </small>
+
+          <!-- =========================
+                Delivery Charges Note
+            ========================== -->
+          <div class="delivery-note" [class.free]="isDeliveryFree()">
+            @if (isDeliveryFree()) {
+            <p>
+              🎉 <strong>Free Delivery!</strong> Your order qualifies for free
+              delivery (order amount is ₹{{ freeDeliveryThreshold }} or above).
+            </p>
+            } @else {
+            <p>
+              🚚 Delivery charges are <strong>not included</strong> in the above
+              amount. They will be <strong>paid separately by you</strong> and
+              may <strong>vary based on distance</strong>. Orders of
+              ₹{{ freeDeliveryThreshold }} or more get
+              <strong>free delivery</strong>.
+            </p>
+            }
+          </div>
+
+          <!-- Delivery Charges Confirmation -->
+          <div class="confirm-order">
+            <label>
+              <input type="checkbox" formControlName="deliveryChargesConfirmed" />
+              I understand that delivery charges (if applicable) are extra,
+              will vary by distance, and are payable by me separately.
+            </label>
+
+            @if (checkoutForm.get('deliveryChargesConfirmed')?.invalid && checkoutForm.get('deliveryChargesConfirmed')?.touched) {
+            <small class="error">Please confirm you understand the delivery charges.</small>
+            }
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Live Location -->
+        <div class="form-group">
+          <label for="shareLocation">Live Location (Optional)</label>
+          <button id="shareLocation" type="button" class="location-btn" (click)="shareLocation()">
+            {{ locationShared ? '✓ Location Shared' : 'Share Current Location' }}
+          </button>
+        </div>
+
+        <!-- Final Confirmation -->
+        <div class="confirm-order">
+          <label>
+            <input type="checkbox" formControlName="confirmOrder" />
+            I confirm that the above delivery details are correct.
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="checkout-footer">
+      <div class="summary-row final-amount">
+        <span>Final Amount</span>
+        <strong>₹{{ getFinalAmount() }}</strong>
       </div>
-    </aside>
-  </div>
+
+      <button class="place-order-btn" type="button" [disabled]="checkoutForm.invalid" (click)="confirmAndSendOrder()">
+        Confirm & Send via WhatsApp
+      </button>
+    </div>
+  </aside>
+</div>
 }
