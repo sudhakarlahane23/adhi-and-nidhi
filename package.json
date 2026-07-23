@@ -9,7 +9,8 @@
     "start": "ng serve -o",
     "watch": "ng build --watch --configuration development",
     "merge-products": "node scripts/generate-products-with-hover.js",
-    "build": "npm run merge-products && ng build",
+    "generate-banner": "node scripts/generate-banner-json.js",
+    "build": "npm run merge-products && npm run generate-banner && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix"

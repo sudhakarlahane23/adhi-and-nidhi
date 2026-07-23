@@ -1,0 +1,583 @@
+These are my banner files and I want create a carosual.
+In that carosual, I want add 
+
+1. heading, para and other info witch slide with each image.
+2. I want change the position of info for each slide, like top right, top center, top, left, left, center, center center, right center, bottom left, bottom center, bottom right
+3. The position will can be set for mobile device with different than above.
+4. Carousal should be mobile first approach for responsive
+5. Carousal animation speed should can be configure manually.
+6. The carousal animation should be very smooth and feal very rich
+7. There will be separate folder in assets/images folder for banners/carousal images.
+8. The JSON can be generate based on availability of images.
+9. JSON can be add additional info related properties, like image heading or title, description, link button etc.
+
+
+
+
+AI Prompt:
+
+---
+
+# Angular Banner Carousel Enhancement Requirements
+
+I already have banner-related files in my Angular project. I want to transform them into a **premium, modern, mobile-first, enterprise-grade carousel component** suitable for a professional e-commerce website (Adhi & Nidhi Jewellery).
+
+The carousel should feel as polished and smooth as premium websites like Apple, Samsung, Titan, Tanishq, or luxury fashion brands.
+
+## Primary Goals
+
+* Mobile-first responsive design
+* Rich, premium animations
+* High performance
+* SEO friendly
+* Accessibility compliant
+* Easily configurable
+* Future-proof architecture
+* Angular 20+ compatible
+* Signal-based where appropriate
+
+---
+
+# 1. Slide Content
+
+Each slide should support:
+
+* Heading
+* Subheading
+* Description
+* Small label/tag
+* CTA Button
+* Secondary Button (optional)
+* Button link
+* Image
+* Image Alt Text
+* Badge (New, Sale, Trending, Limited Edition, etc.)
+* Price (optional)
+* Offer text (optional)
+
+Example:
+
+```
+{
+  "heading": "...",
+  "subHeading": "...",
+  "description": "...",
+  "primaryButton": "...",
+  "secondaryButton": "...",
+  "link": "...",
+  "image": "...",
+  "alt": "...",
+  "badge": "...",
+  "offer": "...",
+  "price": "..."
+}
+```
+
+---
+
+# 2. Content Position
+
+Each slide should allow independent content placement.
+
+Desktop positions:
+
+* Top Left
+* Top Center
+* Top Right
+* Center Left
+* Center
+* Center Right
+* Bottom Left
+* Bottom Center
+* Bottom Right
+
+Example
+
+```
+contentPosition: "top-right"
+```
+
+---
+
+# 3. Mobile Position
+
+Mobile should support a completely different position.
+
+Example
+
+```
+desktopPosition: "center-left"
+
+mobilePosition: "bottom-center"
+```
+
+Desktop and mobile layouts must be completely independent.
+
+---
+
+# 4. Text Animation
+
+Each slide should support configurable text animation.
+
+Examples
+
+* Fade
+* Slide Left
+* Slide Right
+* Slide Up
+* Slide Down
+* Zoom
+* Scale
+* Blur In
+* None
+
+Example
+
+```
+textAnimation: "fade"
+```
+
+Animation delay should also be configurable.
+
+---
+
+# 5. Image Animation
+
+Each slide image should support:
+
+* Zoom In
+* Zoom Out
+* Slow Pan
+* Ken Burns Effect
+* Fade
+* None
+
+Animation speed configurable.
+
+---
+
+# 6. Carousel Animation
+
+Configurable
+
+```
+autoplay: true
+
+interval: 5000
+
+transitionDuration: 700
+
+transitionTimingFunction: "ease-in-out"
+```
+
+Support
+
+* Slide
+* Fade
+* Cross Fade
+
+Animations should be GPU accelerated using
+
+```
+transform
+
+opacity
+
+will-change
+```
+
+Avoid layout reflow.
+
+---
+
+# 7. Responsive Design
+
+Mobile First.
+
+Breakpoints
+
+* Mobile
+* Tablet
+* Laptop
+* Desktop
+* Ultra Wide
+
+Each should support
+
+* Different font sizes
+* Different paddings
+* Different button sizes
+* Different content widths
+
+---
+
+# 8. Background Images
+
+Store images in
+
+```
+assets/images/banners/
+```
+
+Support
+
+* JPG
+* PNG
+* AVIF
+* WebP
+
+Lazy load all images except first.
+
+---
+
+# 9. JSON Driven
+
+Every slide should be driven entirely by JSON.
+
+Example
+
+```
+assets/data/banner.json
+```
+
+No hardcoded values inside component.
+
+---
+
+# 10. JSON Generator
+
+Create a Node script that scans
+
+```
+assets/images/banners/
+```
+
+and automatically generates
+
+```
+banner.json
+```
+
+based on available images.
+
+Each image should receive default values that can later be edited.
+
+---
+
+# 11. Additional JSON Properties
+
+Support
+
+```
+id
+
+title
+
+heading
+
+subHeading
+
+description
+
+alt
+
+buttonText
+
+buttonLink
+
+secondaryButton
+
+secondaryLink
+
+desktopPosition
+
+mobilePosition
+
+textAnimation
+
+imageAnimation
+
+overlay
+
+overlayOpacity
+
+textColor
+
+buttonColor
+
+backgroundColor
+
+image
+
+priority
+
+badge
+
+offer
+
+price
+
+isNew
+
+isActive
+
+displayOrder
+
+seoTitle
+
+seoDescription
+```
+
+---
+
+# 12. Overlay
+
+Support dark/light overlays.
+
+Example
+
+```
+overlay: true
+
+overlayOpacity: 0.35
+```
+
+---
+
+# 13. Text Colors
+
+Allow
+
+```
+White
+
+Black
+
+Custom HEX
+```
+
+Per slide.
+
+---
+
+# 14. Buttons
+
+Support
+
+Filled
+
+Outline
+
+Ghost
+
+Rounded
+
+Square
+
+Button icon support
+
+Hover animation
+
+Ripple effect
+
+---
+
+# 15. Navigation
+
+Support
+
+Previous
+
+Next
+
+Pagination dots
+
+Fraction indicator
+
+Progress bar
+
+Keyboard navigation
+
+Mouse wheel
+
+Touch swipe
+
+Drag support
+
+---
+
+# 16. Touch Gestures
+
+Mobile should support
+
+Swipe Left
+
+Swipe Right
+
+Velocity detection
+
+Momentum
+
+Natural scrolling
+
+---
+
+# 17. Autoplay
+
+Configurable
+
+Pause on
+
+Hover
+
+Touch
+
+Focus
+
+Tab hidden
+
+Resume automatically.
+
+---
+
+# 18. Accessibility
+
+Keyboard support
+
+ARIA labels
+
+Screen reader friendly
+
+Tab navigation
+
+Focus management
+
+Reduced motion support
+
+---
+
+# 19. Performance
+
+Use
+
+OnPush
+
+Signals
+
+trackBy
+
+Lazy Loading
+
+Intersection Observer
+
+requestAnimationFrame where appropriate
+
+CSS transforms instead of left/top animation
+
+No unnecessary change detection.
+
+---
+
+# 20. SEO
+
+Image Alt
+
+Title
+
+JSON-LD ready
+
+Proper semantic HTML
+
+H1/H2 hierarchy
+
+---
+
+# 21. Loading
+
+Skeleton Loader
+
+Blur placeholder
+
+Image preload for first slide
+
+---
+
+# 22. Error Handling
+
+If image missing
+
+Show placeholder
+
+No runtime errors
+
+Graceful fallback
+
+---
+
+# 23. Theme Support
+
+Support
+
+Light Theme
+
+Dark Theme
+
+Brand Theme
+
+via CSS variables.
+
+---
+
+# 24. Future Ready
+
+Architecture should allow future addition of
+
+* Video slides
+* Background videos
+* YouTube videos
+* Lottie animations
+* GIFs
+* Product sliders
+* Dynamic API data
+* AI-generated banners
+* Seasonal campaigns
+* Countdown timers
+
+without requiring major code changes.
+
+---
+
+# 25. Code Quality
+
+The solution should be
+
+* Modular
+* Reusable
+* Strongly typed
+* Signal-based
+* Clean architecture
+* Well documented
+* Fully responsive
+* Easy to maintain
+* Enterprise-level Angular code
+* Angular 20+ compatible
+
+---
+
+# Expected Deliverables
+
+* `banner.model.ts`
+* `banner.service.ts`
+* `banner.component.ts`
+* `banner.component.html`
+* `banner.component.scss`
+* `banner.json`
+* `generate-banner-json.js`
+* Example banner images folder structure
+* Responsive layout implementation
+* Smooth animation implementation
+* Accessibility support
+* Performance optimizations
+* Complete integration instructions
+
+The final carousel should deliver a **luxury, high-end user experience** with buttery-smooth animations, mobile-first responsiveness, excellent performance, and a fully JSON-driven architecture that is easy to customize and extend for future business needs.

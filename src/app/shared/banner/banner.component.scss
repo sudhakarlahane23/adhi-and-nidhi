@@ -1,0 +1,768 @@
+/* ===========================================================
+   PREMIUM HERO BANNER — Adhi & Nidhi Jewellery
+   Mobile First · GPU-accelerated · JSON-driven
+=========================================================== */
+
+:host {
+  display: block;
+
+  // Brand theme variables (section 23 — theme support via CSS custom props)
+  --brand-gold: #b8860b;
+  --brand-gold-light: #FFD978;
+  --carousel-radius: 0px;
+}
+
+:host(.theme-dark) {
+  --brand-gold: #d4af37;
+}
+
+/* ===========================================================
+   HERO / WRAPPER
+=========================================================== */
+
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+
+  height: 72vh;
+  min-height: 480px;
+  max-height: 900px;
+
+  touch-action: pan-y;
+}
+
+/* ===========================================================
+   LOADING SKELETON (section 21)
+=========================================================== */
+
+.banner-skeleton {
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.02) 20%,
+    rgba(255, 255, 255, 0.08) 40%,
+    rgba(255, 255, 255, 0.02) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+
+/* ===========================================================
+   EMPTY / ERROR STATE (section 22)
+=========================================================== */
+
+.banner-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  background: linear-gradient(135deg, #1a1a1a, #000);
+  font-size: 1rem;
+}
+
+/* ===========================================================
+   SLIDES
+=========================================================== */
+
+.banner-slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+
+  will-change: transform, opacity;
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.banner-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+// 'slide' effect uses inline transform (see component.slideStyle()); this
+// just guarantees the transition applies smoothly to that transform too.
+.banner-slide.effect-slide {
+  transition:
+    transform 0.7s ease-in-out,
+    opacity 0.4s ease;
+}
+
+.banner-slide.effect-fade,
+.banner-slide.effect-crossfade {
+  transform: none;
+}
+
+/* ===========================================================
+   IMAGE
+=========================================================== */
+
+.banner-slide picture,
+.banner-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.banner-slide img {
+  object-fit: cover;
+  object-position: center center;
+  will-change: transform;
+}
+
+/* ----- Image animation variants (section 5) ----- */
+
+.banner-slide img.ia-none { animation: none; }
+
+.banner-slide.active img.ia-zoom-in {
+  animation: img-zoom-in linear forwards;
+}
+
+.banner-slide.active img.ia-zoom-out {
+  animation: img-zoom-out linear forwards;
+}
+
+.banner-slide.active img.ia-slow-pan {
+  animation: img-slow-pan linear forwards;
+}
+
+.banner-slide.active img.ia-ken-burns {
+  animation: img-ken-burns ease-out forwards;
+}
+
+.banner-slide.active img.ia-fade {
+  animation: img-fade ease-out forwards;
+}
+
+@keyframes img-zoom-in {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+@keyframes img-zoom-out {
+  from { transform: scale(1.12); }
+  to   { transform: scale(1); }
+}
+
+@keyframes img-slow-pan {
+  from { transform: scale(1.1) translateX(0); }
+  to   { transform: scale(1.1) translateX(-3%); }
+}
+
+@keyframes img-ken-burns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-2%, -1%); }
+}
+
+@keyframes img-fade {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* ===========================================================
+   OVERLAY
+=========================================================== */
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  --overlay-opacity: 0.35;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, calc(var(--overlay-opacity) * 1.8)) 0%,
+    rgba(0, 0, 0, calc(var(--overlay-opacity) * 0.85)) 45%,
+    rgba(0, 0, 0, calc(var(--overlay-opacity) * 0.4)) 100%
+  );
+}
+
+/* ===========================================================
+   CONTENT — base (mobile-first defaults)
+=========================================================== */
+
+.banner-content {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  padding: 24px;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+
+  color: #fff;
+
+  // mobile default: bottom-center
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 88px;
+  text-align: center;
+}
+
+// .banner-content-inner {
+//   max-width: 700px;
+//   opacity: 0;
+// }
+
+// .banner-slide.active .banner-content-inner {
+//   opacity: 1;
+// }
+
+/* ===========================================================
+   POSITION MATRIX — mobile first
+   pos-m-*  → applies unconditionally (mobile default)
+   pos-t-*  → overrides at >=768px
+   pos-d-*  → overrides at >=992px
+=========================================================== */
+
+@mixin position-rules($prefix) {
+  &.#{$prefix}-left-top      { align-items: flex-start; justify-content: flex-start; }
+  &.#{$prefix}-left-center   { align-items: flex-start; justify-content: center; }
+  &.#{$prefix}-left-bottom   { align-items: flex-start; justify-content: flex-end; }
+  &.#{$prefix}-center-top    { align-items: center;     justify-content: flex-start; }
+  &.#{$prefix}-center-center { align-items: center;     justify-content: center; }
+  &.#{$prefix}-center-bottom { align-items: center;     justify-content: flex-end; }
+  &.#{$prefix}-right-top     { align-items: flex-end;   justify-content: flex-start; }
+  &.#{$prefix}-right-center  { align-items: flex-end;   justify-content: center; }
+  &.#{$prefix}-right-bottom  { align-items: flex-end;   justify-content: flex-end; }
+}
+
+@mixin text-align-rules($prefix) {
+  &.#{$prefix}-left   { text-align: left; }
+  &.#{$prefix}-center { text-align: center; }
+  &.#{$prefix}-right  { text-align: right; }
+}
+
+.banner-content {
+  @include position-rules('pos-m');
+  @include text-align-rules('text-m');
+}
+
+@media (min-width: 768px) {
+  .banner-content {
+    @include position-rules('pos-t');
+    @include text-align-rules('text-t');
+  }
+}
+
+@media (min-width: 992px) {
+  .banner-content {
+    @include position-rules('pos-d');
+    @include text-align-rules('text-d');
+  }
+}
+
+/* ===========================================================
+   TEXT ANIMATIONS (section 4)
+   Delay is per-slide via --text-delay custom property.
+=========================================================== */
+
+.banner-content-inner {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-delay: var(--text-delay, 0ms);
+}
+
+.banner-content-inner.ta-none { animation: none; opacity: 1; }
+
+.banner-slide.active .banner-content-inner.ta-fade       { animation-name: ta-fade; }
+.banner-slide.active .banner-content-inner.ta-slide-left  { animation-name: ta-slide-left; }
+.banner-slide.active .banner-content-inner.ta-slide-right { animation-name: ta-slide-right; }
+.banner-slide.active .banner-content-inner.ta-slide-up    { animation-name: ta-slide-up; }
+.banner-slide.active .banner-content-inner.ta-slide-down  { animation-name: ta-slide-down; }
+.banner-slide.active .banner-content-inner.ta-zoom        { animation-name: ta-zoom; }
+.banner-slide.active .banner-content-inner.ta-scale       { animation-name: ta-scale; }
+.banner-slide.active .banner-content-inner.ta-blur-in     { animation-name: ta-blur-in; }
+
+@keyframes ta-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ta-slide-left {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ta-slide-right {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ta-slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ta-slide-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ta-zoom {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ta-scale {
+  from { opacity: 0; transform: scale(1.15); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ta-blur-in {
+  from { opacity: 0; filter: blur(8px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+/* ===========================================================
+   BADGE (section 1 / 11)
+=========================================================== */
+
+.banner-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  color: #111;
+  background: var(--brand-gold-light);
+}
+
+.banner-badge.badge-sale             { background: #ff5c5c; color: #fff; }
+.banner-badge.badge-trending         { background: #ff9f1c; color: #111; }
+.banner-badge.badge-limited-edition  { background: #111; color: var(--brand-gold-light); border: 1px solid var(--brand-gold-light); }
+
+/* ===========================================================
+   TEXT
+=========================================================== */
+
+.banner-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+  margin-bottom: 14px;
+}
+
+.banner-heading {
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 16px;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.banner-subheading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.banner-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 22px;
+}
+
+.banner-merchandising {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  justify-content: inherit;
+}
+
+.banner-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brand-gold-light);
+}
+
+.banner-offer {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(184, 134, 11, 0.35);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* ===========================================================
+   BUTTONS (section 14)
+=========================================================== */
+
+.banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: inherit;
+}
+
+.btn-banner {
+  --btn-color: var(--brand-gold);
+
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-width: 160px;
+  padding: 13px 28px;
+
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.btn-banner.shape-rounded { border-radius: 999px; }
+.btn-banner.shape-square  { border-radius: 6px; }
+
+.btn-banner.btn-filled {
+  background: var(--btn-color);
+  border: 2px solid var(--btn-color);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(184, 134, 11, 0.3);
+}
+
+.btn-banner.btn-filled:hover {
+  background: #fff;
+  color: var(--btn-color);
+  border-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.btn-banner.btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-banner.btn-outline:hover {
+  background: #fff;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+.btn-banner.btn-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid transparent;
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+.btn-banner.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.btn-banner:active {
+  transform: translateY(0);
+}
+
+// Simple ripple via ::after — activated on :active for a tactile click
+.btn-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.btn-banner:active::after {
+  opacity: 1;
+  transform: scale(1.6);
+  transition: 0s;
+}
+
+/* ===========================================================
+   PREVIOUS / NEXT
+=========================================================== */
+
+.banner-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 22px;
+
+  cursor: pointer;
+  z-index: 30;
+  transition: 0.35s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-nav:hover {
+  background: var(--brand-gold);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.banner-nav.prev { left: 12px; }
+.banner-nav.next { right: 12px; }
+
+/* ===========================================================
+   DOTS
+=========================================================== */
+
+.banner-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 30;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.55);
+  transition: 0.35s;
+  padding: 0;
+}
+
+.dot:hover { background: #fff; }
+
+.dot.active {
+  width: 30px;
+  border-radius: 999px;
+  background: var(--brand-gold);
+}
+
+/* ===========================================================
+   FRACTION INDICATOR
+=========================================================== */
+
+.banner-fraction {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* ===========================================================
+   PROGRESS BAR
+=========================================================== */
+
+.banner-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.banner-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--brand-gold);
+  animation-name: progress-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* ===========================================================
+   ACCESSIBILITY
+=========================================================== */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.banner-nav:focus-visible,
+.dot:focus-visible,
+.btn-banner:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+:host(:focus-visible) {
+  outline: 3px solid var(--brand-gold-light);
+  outline-offset: -3px;
+}
+
+/* ===========================================================
+   TABLET
+=========================================================== */
+
+@media (min-width: 768px) {
+
+  .banner-wrapper {
+    height: 65vh;
+    min-height: 480px;
+  }
+
+  .banner-content {
+    padding: 40px;
+  }
+
+  .banner-heading {
+    font-size: 2.6rem;
+  }
+
+  .banner-description {
+    max-width: 520px;
+  }
+
+}
+
+/* ===========================================================
+   DESKTOP
+=========================================================== */
+
+@media (min-width: 992px) {
+
+  .banner-wrapper {
+    height: 72vh;
+    min-height: 520px;
+  }
+
+  .banner-nav {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+
+  .banner-nav.prev { left: 18px; }
+  .banner-nav.next { right: 18px; }
+
+  .banner-dots { bottom: 28px; }
+
+  .banner-heading {
+    font-size: 3rem;
+  }
+
+}
+
+/* ===========================================================
+   ULTRA WIDE
+=========================================================== */
+
+@media (min-width: 1400px) {
+
+  .banner-wrapper {
+    height: 80vh;
+  }
+
+  .banner-content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .banner-heading {
+    font-size: 4rem;
+  }
+
+  .banner-description {
+    font-size: 1.15rem;
+  }
+
+}
+
+/* ===========================================================
+   REDUCED MOTION
+=========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .banner-slide,
+  .banner-content-inner,
+  .banner-slide img,
+  .banner-progress-fill,
+  .skeleton-shimmer {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .banner-content-inner {
+    opacity: 1;
+  }
+
+}

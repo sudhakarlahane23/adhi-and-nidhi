@@ -1,13 +1,12 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { WhatsappEnquiryComponent } from '../../../shared/whatsapp-enquiry/whatsapp-enquiry';
 import { CartService } from '../../services/cart.service';
 import { CartSidebarComponent } from '../../../features/cart-sidebar/cart-sidebar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, WhatsappEnquiryComponent, CartSidebarComponent],
+  imports: [RouterLink, RouterLinkActive, CartSidebarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -16,7 +15,7 @@ export class HeaderComponent {
   readonly totalItems = this.cartService.totalItems;
 
   menuOpen = false;
-  showWhatsappPopup = false;
+  // showWhatsappPopup = false;
   showCart = false;
 
   toggleMenu(): void {
@@ -27,22 +26,22 @@ export class HeaderComponent {
     this.menuOpen = false;
   }
 
-  openWhatsappPopup(): void {
-    this.showWhatsappPopup = true;
-    this.closeMenu();
-  }
+  // openWhatsappPopup(): void {
+  //   this.showWhatsappPopup = true;
+  //   this.closeMenu();
+  // }
 
-  closeWhatsappPopup(): void {
-    this.showWhatsappPopup = false;
-  }
+  // closeWhatsappPopup(): void {
+  //   this.showWhatsappPopup = false;
+  // }
 
   @HostListener('document:keydown.escape')
   onEscapeKey(): void {
 
-    if (this.showWhatsappPopup) {
-      this.closeWhatsappPopup();
-      return;
-    }
+    // if (this.showWhatsappPopup) {
+    //   this.closeWhatsappPopup();
+    //   return;
+    // }
 
     if (this.showCart) {
       this.closeCart();

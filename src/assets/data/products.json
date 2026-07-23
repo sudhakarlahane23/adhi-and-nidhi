@@ -188,6 +188,9 @@
       "category": "bugadi",
       "price": "₹80",
       "image": "/assets/images/collection/bugadi/bugadi-r-80-bugadi-oos-img-2.avif",
+      "images": {
+        "hover": "/assets/images/collection/bugadi/bugadi-r-80-bugadi-oos-img-2-hover.avif"
+      },
       "is-out-of-stock": true,
       "seo-information": {
         "seo-information": {
@@ -399,6 +402,9 @@
       "category": "necklaces",
       "price": "₹1099",
       "image": "/assets/images/collection/necklaces/necklace-r-1099-img-1.avif",
+      "images": {
+        "hover": "/assets/images/collection/necklaces/necklace-r-1099-img-1-hover.avif"
+      },
       "seo-information": {
         "seo-information": {
           "meta-title": "Statement Ring with Elegant Finish",
