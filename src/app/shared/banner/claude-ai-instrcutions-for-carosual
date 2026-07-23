@@ -1,0 +1,19 @@
+All 9 files are ready — a complete, drop-in replacement for your banner carousel, built on Angular's signal + @if/@for control flow with OnPush change detection.
+
+What's implemented:
+
+banner.model.ts — full typed schema: heading/subheading/description/badge/price/offer, independent desktop/tablet/mobile positions, text & image animation enums, button config, plus mediaType reserved for future video/Lottie slides.
+banner.service.ts — loads banner.json, normalizes missing fields so a partial JSON entry never breaks rendering.
+banner.component.ts — autoplay with pause-on-hover/touch/focus/hidden-tab, IntersectionObserver-based pause when scrolled off-screen, keyboard nav (bound to the carousel's own focus, not the whole window), mouse-wheel nav, unified pointer-events drag+swipe, prefers-reduced-motion detection, image-error fallback.
+banner.component.html — semantic markup (first slide <h1>, rest <h2>), ARIA roles/live-region, <picture> with AVIF/WebP + mobile source, lazy-loading beyond the first slide.
+banner.component.scss — mobile-first position matrix (no JS width-checks — pure CSS overrides at 768px/992px/1400px), GPU-only animations (transform/opacity), all 9 text animations, 5 image animations, badge/button/progress-bar styling, reduced-motion backstop.
+generate-banner-json.js — scans your images folder and generates/updates banner.json without clobbering hand-edited entries.
+banner.json — 3 fully worked sample slides demonstrating every feature.
+INTEGRATION.md — where each file goes, prerequisites (provideHttpClient, Bootstrap Icons), and how positioning/animation/autoplay all wire together.
+
+A couple of things I made judgment calls on, worth knowing:
+
+Video/YouTube/Lottie slides aren't built (your spec only asked the architecture allow them later without rework — mediaType is there as the extension point).
+Icons assume Bootstrap Icons; drop the <i> tags if you don't want that dependency.
+
+Let me know if you want me to also wire up the JSON-LD structured data or the generate-banner-json.js AVIF/WebP auto-conversion — those were the two items I intentionally left as manual/future steps rather than guessing at your image pipeline.

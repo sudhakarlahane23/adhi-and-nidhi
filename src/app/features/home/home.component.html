@@ -3,40 +3,7 @@
 
 <main>
   <section class="hero">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <p class="eyebrow">Luxury artificial • Imitation • Jewellery</p>
-          <h1>Adhi & Nidhi Jewellery</h1>
-          <p class="lead">Beautiful heirloom pieces for every cherished moment, from bridal splendor to everyday elegance.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" routerLink="/products">Explore Collection</a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="hero-visual" (mouseenter)="pauseAutoplay()" (mouseleave)="resumeAutoplay()">
-            <div class="hero-slide">
-              <img [src]="slides[currentSlide()].image" [alt]="slides[currentSlide()].title" />
-              <div class="hero-card">
-                <h3>{{ slides[currentSlide()].title }}</h3>
-                <p>{{ slides[currentSlide()].description }}</p>
-              </div>
-              <div class="hero-slider-nav" aria-label="Hero image navigation">
-                @for (slide of slides; track slide.id) {
-                  <button
-                    type="button"
-                    class="slider-dot"
-                    [class.active]="currentSlide() === $index"
-                    (click)="goToSlide($index)"
-                    [attr.aria-label]="'View slide ' + ($index + 1)"
-                  ></button>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-banner></app-banner>
   </section>
 
   <section class="section about">

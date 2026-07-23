@@ -6,15 +6,24 @@ import { ProductService } from '../../core/services/product.service';
 import { FooterComponent } from '../../core/layout/footer/footer.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
+import { BannerComponent } from '../../shared/banner/banner.component';
+// import { BannerComponent } from '../../shared/banner/banner';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent, AnnouncementBarComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterLink,
+    HeaderComponent,
+    AnnouncementBarComponent,
+    FooterComponent,
+    BannerComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnDestroy {
   private readonly productService = inject(ProductService);
   private autoplayTimer: ReturnType<typeof setInterval> | null = null;
 
@@ -59,69 +68,69 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: '/assets/images/hero/unknown.jpeg',
     },
   ];
-  readonly slides = [
-    {
-      id: 1,
-      image: '/assets/images/banners/banner-img-1.jpg',
-      title: 'Bridal Collection',
-      description: 'Discover statement necklaces, exquisite rings, and timeless bangles for your special day.',
-    },
-    {
-      id: 2,
-      image: '/assets/images/banners/banner-img-2.jpg',
-      title: 'Statement Style',
-      description: 'Celebrate every moment with bold, elegant imitation jewellery crafted to sparkle.',
-    },
-    {
-      id: 3,
-      image: '/assets/images/banners/banner-img-3.jpg',
-      title: 'Modern Elegance',
-      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
-    },
-    {
-      id: 4,
-      image: '/assets/images/banners/banner-img-4.jpg',
-      title: 'Modern Elegance',
-      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
-    },
-    {
-      id: 5,
-      image: '/assets/images/banners/banner-img-5.jpg',
-      title: 'Modern Elegance',
-      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
-    },
-    {
-      id: 6,
-      image: '/assets/images/banners/banner-img-6.jpg',
-      title: 'Modern Elegance',
-      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
-    },
-    {
-      id: 7,
-      image: '/assets/images/banners/banner-img-7.jpg',
-      title: 'Modern Elegance',
-      description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
-    }
-  ];
+  // readonly slides = [
+  //   {
+  //     id: 1,
+  //     image: '/assets/images/banners/banner-img-1.jpg',
+  //     title: 'Bridal Collection',
+  //     description: 'Discover statement necklaces, exquisite rings, and timeless bangles for your special day.',
+  //   },
+  //   {
+  //     id: 2,
+  //     image: '/assets/images/banners/banner-img-2.jpg',
+  //     title: 'Statement Style',
+  //     description: 'Celebrate every moment with bold, elegant imitation jewellery crafted to sparkle.',
+  //   },
+  //   {
+  //     id: 3,
+  //     image: '/assets/images/banners/banner-img-3.jpg',
+  //     title: 'Modern Elegance',
+  //     description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+  //   },
+  //   {
+  //     id: 4,
+  //     image: '/assets/images/banners/banner-img-4.jpg',
+  //     title: 'Modern Elegance',
+  //     description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+  //   },
+  //   {
+  //     id: 5,
+  //     image: '/assets/images/banners/banner-img-5.jpg',
+  //     title: 'Modern Elegance',
+  //     description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+  //   },
+  //   {
+  //     id: 6,
+  //     image: '/assets/images/banners/banner-img-6.jpg',
+  //     title: 'Modern Elegance',
+  //     description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+  //   },
+  //   {
+  //     id: 7,
+  //     image: '/assets/images/banners/banner-img-7.jpg',
+  //     title: 'Modern Elegance',
+  //     description: 'Refresh your look with contemporary pieces designed for festive and everyday charm.',
+  //   }
+  // ];
   readonly currentSlide = signal(0);
   readonly isPaused = signal(false);
 
-  ngOnInit(): void {
-    this.startAutoplay();
-  }
+  // ngOnInit(): void {
+  //   this.startAutoplay();
+  // }
 
   ngOnDestroy(): void {
     this.stopAutoplay();
   }
 
-  startAutoplay(): void {
-    this.stopAutoplay();
-    this.autoplayTimer = setInterval(() => {
-      if (!this.isPaused()) {
-        this.currentSlide.set((this.currentSlide() + 1) % this.slides.length);
-      }
-    }, 3500);
-  }
+  // startAutoplay(): void {
+  //   this.stopAutoplay();
+  //   this.autoplayTimer = setInterval(() => {
+  //     if (!this.isPaused()) {
+  //       this.currentSlide.set((this.currentSlide() + 1) % this.slides.length);
+  //     }
+  //   }, 3500);
+  // }
 
   stopAutoplay(): void {
     if (this.autoplayTimer) {

@@ -7,6 +7,8 @@ import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/ann
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { FooterComponent } from '../../core/layout/footer/footer.component';
 
+const CATEGORY_STORAGE_KEY = 'products.selectedCategory';
+
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -25,7 +27,7 @@ export class ProductsComponent {
 
   readonly products = this.productService.products;
   readonly categories = this.productService.categories;
-  readonly selectedCategory = signal<string>('All');
+  readonly selectedCategory = signal<string>(this.getStoredCategory());
   readonly searchTerm = signal('');
   readonly currentPage = signal(1);
   readonly pageSize = 400;
@@ -53,8 +55,23 @@ export class ProductsComponent {
     return this.filteredProducts().slice(start, start + this.pageSize);
   });
 
+  private getStoredCategory(): string {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return 'All';
+    }
+    return window.sessionStorage.getItem(CATEGORY_STORAGE_KEY) ?? 'All';
+  }
+
+  private storeCategory(category: string): void {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return;
+    }
+    window.sessionStorage.setItem(CATEGORY_STORAGE_KEY, category);
+  }
+
   selectCategory(category: string): void {
     this.selectedCategory.set(category);
+    this.storeCategory(category);
     this.currentPage.set(1);
   }
 

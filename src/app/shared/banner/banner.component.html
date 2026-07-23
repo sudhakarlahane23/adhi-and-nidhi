@@ -1,0 +1,242 @@
+<div
+  class="banner-wrapper"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  (pointerdown)="onPointerDown($event)"
+  (pointermove)="onPointerMove($event)"
+  (pointerup)="onPointerUp()"
+  (pointercancel)="onPointerUp()"
+  (pointerleave)="onPointerUp()">
+
+  <!-- ==================================================
+       SKELETON / LOADING STATE (section 21)
+  =================================================== -->
+  @if (isLoading()) {
+    <div class="banner-skeleton" aria-hidden="true">
+      <div class="skeleton-shimmer"></div>
+    </div>
+  }
+
+  <!-- ==================================================
+       ERROR / EMPTY STATE (section 22)
+  =================================================== -->
+  @if (!isLoading() && (hasError() || totalSlides() === 0)) {
+    <div class="banner-empty">
+      <p>Explore our latest jewellery collections.</p>
+    </div>
+  }
+
+  <!-- ==================================================
+       SLIDES
+  =================================================== -->
+  @if (!isLoading() && totalSlides() > 0) {
+
+    @for (banner of banners(); track trackByBanner($index, banner)) {
+
+      <article
+        class="banner-slide"
+        [class.active]="isActive($index)"
+        [class]="'effect-' + (banner.transitionEffect || 'crossfade')"
+        [style]="slideStyle(banner, $index)"
+        [attr.aria-hidden]="!isActive($index)"
+        [attr.aria-label]="slideAriaLabel(banner, $index)"
+        role="group"
+        aria-roledescription="slide">
+
+        <!-- Image (first slide loads eagerly; rest are lazy — section 8/19) -->
+        <picture>
+          @if (banner.imageSources?.length) {
+            @for (source of banner.imageSources; track source.srcset) {
+              <source [srcset]="source.srcset" [type]="source.type" media="(min-width: 768px)" />
+            }
+          }
+          @if (banner.mobileImage) {
+            <source [srcset]="banner.mobileImage" media="(max-width: 767px)" />
+          }
+          <img
+            [src]="isImageBroken($index) ? placeholderImage : banner.image"
+            [alt]="banner.alt"
+            [class]="imageAnimationClass(banner)"
+            [style.animation-duration.ms]="banner.imageAnimationSpeed || 8000"
+            [loading]="banner.priority ? 'eager' : 'lazy'"
+            [attr.fetchpriority]="banner.priority ? 'high' : null"
+            (error)="onImageError($index)"
+            decoding="async" />
+        </picture>
+
+        <!-- Overlay -->
+        <div class="banner-overlay" [ngStyle]="overlayStyle(banner)"></div>
+
+        <!-- Content -->
+        <div
+          class="banner-content"
+          [class]="positionClasses(banner)"
+          [ngStyle]="contentTextStyle(banner)">
+
+          <div class="banner-content-inner" [class]="textAnimationClass(banner)" [ngStyle]="animationDelayStyle(banner)">
+
+            @if (banner.badge) {
+              <span class="banner-badge" [class]="'badge-' + banner.badge.toLowerCase().replace(' ', '-')">
+                {{ banner.badge }}
+              </span>
+            }
+
+            @if (banner.eyebrow) {
+              <p class="banner-eyebrow">{{ banner.eyebrow }}</p>
+            }
+
+            @if (banner.heading) {
+              @if ($index === 0) {
+                <h1 class="banner-heading">{{ banner.heading }}</h1>
+              } @else {
+                <h2 class="banner-heading">{{ banner.heading }}</h2>
+              }
+            }
+
+            @if (banner.subHeading) {
+              <p class="banner-subheading">{{ banner.subHeading }}</p>
+            }
+
+            @if (banner.description) {
+              <p class="banner-description">{{ banner.description }}</p>
+            }
+
+            @if (banner.price || banner.offer) {
+              <div class="banner-merchandising">
+                @if (banner.price) {
+                  <span class="banner-price">{{ banner.price }}</span>
+                }
+                @if (banner.offer) {
+                  <span class="banner-offer">{{ banner.offer }}</span>
+                }
+              </div>
+            }
+
+            @if (banner.primaryButton?.text || banner.secondaryButton?.text) {
+              <div class="banner-actions" [ngStyle]="buttonStyleFor(banner)">
+
+                @if (banner.primaryButton?.text) {
+                  @if (banner.primaryButton; as primary) {
+                    <a
+                      class="btn-banner"
+                      [class]="'btn-' + (primary.style || 'filled') + ' shape-' + (primary.shape || 'rounded')"
+                      [routerLink]="primary.target === '_blank' ? null : primary.link"
+                      [href]="primary.target === '_blank' ? primary.link : null"
+                      [attr.target]="primary.target || null"
+                      [attr.rel]="primary.target === '_blank' ? 'noopener' : null">
+                      @if (primary.icon) {
+                        <i class="bi" [class]="'bi-' + primary.icon" aria-hidden="true"></i>
+                      }
+                      {{ primary.text }}
+                    </a>
+                  }
+                }
+
+                @if (banner.secondaryButton?.text) {
+                  @if (banner.secondaryButton; as secondary) {
+                    <a
+                      class="btn-banner btn-secondary"
+                      [class]="'btn-' + (secondary.style || 'outline') + ' shape-' + (secondary.shape || 'rounded')"
+                      [routerLink]="secondary.target === '_blank' ? null : secondary.link"
+                      [href]="secondary.target === '_blank' ? secondary.link : null"
+                      [attr.target]="secondary.target || null"
+                      [attr.rel]="secondary.target === '_blank' ? 'noopener' : null">
+                      @if (secondary.icon) {
+                        <i class="bi" [class]="'bi-' + secondary.icon" aria-hidden="true"></i>
+                      }
+                      {{ secondary.text }}
+                    </a>
+                  }
+                }
+
+              </div>
+            }
+
+          </div>
+
+        </div>
+
+      </article>
+
+    }
+
+  }
+
+  <!-- ==================================================
+       PREVIOUS / NEXT
+  =================================================== -->
+  @if (hasMultipleSlides()) {
+
+    <button
+      type="button"
+      class="banner-nav prev"
+      (click)="goToPrevious()"
+      aria-label="Previous slide">
+      <i class="bi bi-chevron-left" aria-hidden="true">‹</i>
+    </button>
+
+    <button
+      type="button"
+      class="banner-nav next"
+      (click)="goToNext()"
+      aria-label="Next slide">
+      <i class="bi bi-chevron-right" aria-hidden="true">›</i>
+    </button>
+
+  }
+
+  <!-- ==================================================
+       DOTS
+  =================================================== -->
+  @if (hasMultipleSlides()) {
+
+    <div class="banner-dots" role="tablist" aria-label="Slide navigation">
+      @for (banner of banners(); track trackByBanner($index, banner)) {
+        <button
+          type="button"
+          class="dot"
+          [class.active]="isActive($index)"
+          role="tab"
+          [attr.aria-selected]="isActive($index)"
+          [attr.aria-label]="'Go to slide ' + ($index + 1)"
+          (click)="goToSlide($index)">
+        </button>
+      }
+    </div>
+
+  }
+
+  <!-- ==================================================
+       FRACTION INDICATOR
+  =================================================== -->
+  @if (hasMultipleSlides()) {
+    <div class="banner-fraction" aria-hidden="true">
+      {{ getCurrentSlideNumber() }} / {{ getTotalSlideCount() }}
+    </div>
+  }
+
+  <!-- ==================================================
+       PROGRESS BAR
+  =================================================== -->
+  @if (hasMultipleSlides() && shouldAutoplay()) {
+    <div class="banner-progress" aria-hidden="true">
+      <!-- keying on currentSlide() forces this node to be recreated every
+           slide change, which restarts the CSS width animation cleanly -->
+      @for (tick of [currentSlide()]; track tick) {
+        <div
+          class="banner-progress-fill"
+          [style.animation-duration.ms]="config.interval"></div>
+      }
+    </div>
+  }
+
+  <!-- Screen-reader live status -->
+  @if (currentBanner(); as banner) {
+    @if (banner.heading) {
+      <p class="visually-hidden" aria-live="polite">
+        Showing slide {{ getCurrentSlideNumber() }} of {{ getTotalSlideCount() }}: {{ banner.heading }}
+      </p>
+    }
+  }
+
+</div>

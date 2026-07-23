@@ -19,7 +19,7 @@
 
       <div class="col-4 col-md-8 d-flex justify-content-end align-items-center">
         <!-- Cart Button - Always Visible -->
-        <button
+        <!-- <button
           class="btn btn-outline cart-btn me-2"
           type="button"
           (click)="openCart()">
@@ -32,6 +32,23 @@
           <span class="d-none d-md-inline ms-1">
             Cart
           </span>
+        </button> -->
+
+        <button
+          class="btn cart-btn me-2"
+          type="button"
+          (click)="openCart()"
+          aria-label="Open cart">
+          <span class="cart-icon-wrap">
+            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 4h2l.4 2M7 13h10l3-7H6.4M7 13L5.4 6M7 13l-1.5 5h11.7M10 20a1 1 0 1 0 0.001 0M17 20a1 1 0 1 0 0.001 0"
+                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            @if (totalItems() > 0) {
+              <span class="cart-count">{{ totalItems() }}</span>
+            }
+          </span>
+          <span class="cart-label d-none d-md-inline">Cart</span>
         </button>
 
         <!-- Mobile Menu Button -->
@@ -78,12 +95,12 @@
             Contact
           </a>
 
-          <button
+          <!-- <button
             class="btn btn-primary whats-app"
             type="button"
             (click)="openWhatsappPopup()">
             Enquire Now
-          </button>
+          </button> -->
 
         </nav>
 
@@ -100,11 +117,11 @@
 
 }
 
-@if (showWhatsappPopup) {
+<!-- @if (showWhatsappPopup) {
 <div class="whatsapp-popup-overlay" (click)="closeWhatsappPopup()">
   <div class="whatsapp-popup-panel" role="dialog" aria-modal="true" aria-labelledby="whatsapp-enquiry-title"
     (click)="$event.stopPropagation()">
     <app-whatsapp-enquiry (closed)="closeWhatsappPopup()"></app-whatsapp-enquiry>
   </div>
 </div>
-}
+} -->

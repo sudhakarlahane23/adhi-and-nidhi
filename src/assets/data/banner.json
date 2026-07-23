@@ -1,0 +1,461 @@
+[
+  {
+    "id": 1,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-1.png",
+    "mobileImage": "",
+    "alt": "Banner 1",
+    "priority": true,
+    "position": {
+      "desktop": {
+        "horizontal": "left",
+        "vertical": "center",
+        "textAlign": "left"
+      },
+      "tablet": {
+        "horizontal": "left",
+        "vertical": "center",
+        "textAlign": "left"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "fade",
+    "animationDelay": 0,
+    "imageAnimation": "ken-burns",
+    "imageAnimationSpeed": 8000,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 1,
+    "seoTitle": "Banner 1",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 2,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-2.png",
+    "mobileImage": "",
+    "alt": "Banner 2",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "right",
+        "vertical": "center",
+        "textAlign": "right"
+      },
+      "tablet": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "slide-up",
+    "animationDelay": 100,
+    "imageAnimation": "slow-pan",
+    "imageAnimationSpeed": 9000,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 2,
+    "seoTitle": "Banner 2",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 3,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-3.png",
+    "mobileImage": "",
+    "alt": "Banner 3",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "center",
+        "vertical": "center",
+        "textAlign": "center"
+      },
+      "tablet": {
+        "horizontal": "center",
+        "vertical": "center",
+        "textAlign": "center"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "center",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "blur-in",
+    "animationDelay": 150,
+    "imageAnimation": "zoom-in",
+    "imageAnimationSpeed": 7500,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 3,
+    "seoTitle": "Banner 3",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 4,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-4.png",
+    "mobileImage": "",
+    "alt": "Banner 4",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "left",
+        "vertical": "top",
+        "textAlign": "left"
+      },
+      "tablet": {
+        "horizontal": "left",
+        "vertical": "top",
+        "textAlign": "left"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "top",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "slide-left",
+    "animationDelay": 100,
+    "imageAnimation": "zoom-out",
+    "imageAnimationSpeed": 8500,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 4,
+    "seoTitle": "Banner 4",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 5,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-5.png",
+    "mobileImage": "",
+    "alt": "Banner 5",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "right",
+        "vertical": "bottom",
+        "textAlign": "right"
+      },
+      "tablet": {
+        "horizontal": "right",
+        "vertical": "bottom",
+        "textAlign": "right"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "slide-right",
+    "animationDelay": 120,
+    "imageAnimation": "parallax",
+    "imageAnimationSpeed": 9500,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 5,
+    "seoTitle": "Banner 5",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 6,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-6.png",
+    "mobileImage": "",
+    "alt": "Banner 6",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "center",
+        "vertical": "top",
+        "textAlign": "center"
+      },
+      "tablet": {
+        "horizontal": "center",
+        "vertical": "top",
+        "textAlign": "center"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "top",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "flip-up",
+    "animationDelay": 80,
+    "imageAnimation": "float",
+    "imageAnimationSpeed": 8000,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 6,
+    "seoTitle": "Banner 6",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 7,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-7.png",
+    "mobileImage": "",
+    "alt": "Banner 7",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "left",
+        "vertical": "bottom",
+        "textAlign": "left"
+      },
+      "tablet": {
+        "horizontal": "left",
+        "vertical": "bottom",
+        "textAlign": "left"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "rotate-in",
+    "animationDelay": 100,
+    "imageAnimation": "slow-zoom",
+    "imageAnimationSpeed": 9000,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 7,
+    "seoTitle": "Banner 7",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 8,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-8.png",
+    "mobileImage": "",
+    "alt": "Banner 8",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "right",
+        "vertical": "top",
+        "textAlign": "right"
+      },
+      "tablet": {
+        "horizontal": "right",
+        "vertical": "top",
+        "textAlign": "right"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "top",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "bounce-up",
+    "animationDelay": 70,
+    "imageAnimation": "pan-left",
+    "imageAnimationSpeed": 8500,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 8,
+    "seoTitle": "Banner 8",
+    "seoDescription": "",
+    "missingImage": false
+  },
+  {
+    "id": 9,
+    "eyebrow": "",
+    "subHeading": "",
+    "description": "",
+    "badge": "",
+    "price": "",
+    "offer": "",
+    "primaryButton": {
+      "link": "/",
+      "style": "filled",
+      "shape": "rounded"
+    },
+    "secondaryButton": null,
+    "image": "assets/images/banners/banner-9.png",
+    "mobileImage": "",
+    "alt": "Banner 9",
+    "priority": false,
+    "position": {
+      "desktop": {
+        "horizontal": "left",
+        "vertical": "center",
+        "textAlign": "left"
+      },
+      "tablet": {
+        "horizontal": "left",
+        "vertical": "center",
+        "textAlign": "left"
+      },
+      "mobile": {
+        "horizontal": "center",
+        "vertical": "bottom",
+        "textAlign": "center"
+      }
+    },
+    "textAnimation": "zoom",
+    "animationDelay": 90,
+    "imageAnimation": "pan-right",
+    "imageAnimationSpeed": 8000,
+    "transitionEffect": "crossfade",
+    "overlay": true,
+    "overlayOpacity": 0.35,
+    "textColor": "#ffffff",
+    "buttonColor": "#b8860b",
+    "interval": 5000,
+    "active": true,
+    "displayOrder": 9,
+    "seoTitle": "Banner 9",
+    "seoDescription": "",
+    "missingImage": false
+  }
+]
