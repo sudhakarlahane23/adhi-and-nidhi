@@ -1,9 +1,7 @@
 [
   {
     "id": 1,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -14,7 +12,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-1.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-1-mobile.avif",
     "alt": "Banner 1",
     "priority": true,
     "position": {
@@ -52,9 +50,7 @@
   },
   {
     "id": 2,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -65,7 +61,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-2.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-2-mobile.avif",
     "alt": "Banner 2",
     "priority": false,
     "position": {
@@ -103,9 +99,7 @@
   },
   {
     "id": 3,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -116,7 +110,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-3.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-3-mobile.avif",
     "alt": "Banner 3",
     "priority": false,
     "position": {
@@ -154,9 +148,7 @@
   },
   {
     "id": 4,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -167,7 +159,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-4.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-4-mobile.avif",
     "alt": "Banner 4",
     "priority": false,
     "position": {
@@ -205,9 +197,7 @@
   },
   {
     "id": 5,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -218,7 +208,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-5.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-5-mobile.avif",
     "alt": "Banner 5",
     "priority": false,
     "position": {
@@ -256,9 +246,7 @@
   },
   {
     "id": 6,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -307,9 +295,7 @@
   },
   {
     "id": 7,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -358,9 +344,7 @@
   },
   {
     "id": 8,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -371,7 +355,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-8.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-8-mobile.avif",
     "alt": "Banner 8",
     "priority": false,
     "position": {
@@ -409,9 +393,7 @@
   },
   {
     "id": 9,
-    "eyebrow": "",
     "subHeading": "",
-    "description": "",
     "badge": "",
     "price": "",
     "offer": "",
@@ -422,7 +404,7 @@
     },
     "secondaryButton": null,
     "image": "assets/images/banners/banner-9.png",
-    "mobileImage": "",
+    "mobileImage": "assets/images/banners/banner-9-mobile.avif",
     "alt": "Banner 9",
     "priority": false,
     "position": {
