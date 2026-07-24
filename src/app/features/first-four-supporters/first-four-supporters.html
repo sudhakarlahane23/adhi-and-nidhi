@@ -1,0 +1,41 @@
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Our First Four Supporters ❤️</p>
+            <h2>🌸 A Heartfelt Thank You</h2>
+            <p class="section-subtitle">The people who believed in Adhi & Nidhi Jewellery from the very beginning. Your
+                trust inspires us every day.✨</p>
+
+            <p><strong>Your support was more than just a purchase.</strong> It gave us the confidence, encouragement, and inspiration
+                to take the next step in our journey. 💎</p>
+
+            <p>We are deeply grateful for your unwavering support and trust. You stood by us when Adhi & Nidhi Jewellery
+                was just beginning, and your belief in us gave us the courage to keep moving forward. 🙏</p>
+
+            <p>>No matter how far Adhi & Nidhi Jewellery goes or how much we grow, you will always hold a special place
+                in our hearts. We will always remember you as our <strong>First Supporters</strong>—the people who helped turn our
+                dream into reality. 🌟</p>
+
+            <p><strong>Thank you for being a part of our story.</strong> 💜✨</p>
+
+        </div>
+        <div class="row g-4">
+            @for (customer of customers; track customer.id) {
+            <div class="col-lg-3 col-md-6">
+                <article class="customer-card">
+                    <div class="customer-avatar-wrap">
+                        <img class="customer-avatar" [src]="customer.image" [alt]="customer.name" />
+                    </div>
+                    <div class="customer-body">
+                        <span class="customer-highlight">{{ customer.highlight }}</span>
+                        <h3>{{ customer.name }}</h3>
+                        <p class="customer-location">{{ customer.city }}</p>
+                        <p class="customer-quote">“{{ customer.review }}”</p>
+                        <p class="customer-item">{{ customer.item }}</p>
+                    </div>
+                </article>
+            </div>
+            }
+        </div>
+    </div>
+</section>

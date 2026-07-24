@@ -1,0 +1,66 @@
+.founders-section {
+  background: linear-gradient(135deg, rgba(255, 248, 239, 0.9), rgba(250, 240, 224, 0.9));
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.eyebrow {
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  color: #6f655a;
+  max-width: 42rem;
+  margin: 1.5rem 0;
+}
+
+.founder-card {
+  background: #fff;
+  border: 1px solid rgba(184, 134, 11, 0.14);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  min-height: 100%;
+  box-shadow: 0 16px 40px rgba(31, 26, 20, 0.06);
+  text-align: center;
+}
+
+.founder-avatar-wrap {
+  margin: 0 1rem auto;
+  max-height: 25rem;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 24px rgba(184, 134, 11, 0.2);
+}
+
+.founder-avatar {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.founder-role {
+  color: #b8860b;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .founder-avatar-wrap {
+    max-height: 20rem;
+  }
+}
