@@ -32,47 +32,9 @@
     </div>
   </section>
 
-  <section class="section founders-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Meet the Founders</p>
-        <h2>The faces behind Adhi & Nidhi</h2>
-        <p class="section-subtitle">A beautiful story of passion, elegance, and love for timeless imitation jewellery.</p>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-4 col-md-6">
-          <article class="founder-card">
-            <div class="founder-avatar-wrap">
-              <img class="founder-avatar" src="/assets/images/owners/ashwini.jpeg" alt="Ashwini" />
-            </div>
-            <h3>Ashwini</h3>
-            <p class="founder-role">Founder & Creative Vision</p>
-            <p>A warm-hearted designer who believes every piece should reflect grace, confidence, and joyful celebration.</p>
-          </article>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <article class="founder-card">
-            <div class="founder-avatar-wrap">
-              <img class="founder-avatar" src="/assets/images/owners/adhi.jpeg" alt="Adhi" />
-            </div>
-            <h3>Adhi</h3>
-            <p class="founder-role">Brand Curator</p>
-            <p>Adhi brings a fresh, youthful touch to the collection, blending modern style with elegant traditional charm.</p>
-          </article>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <article class="founder-card">
-            <div class="founder-avatar-wrap">
-              <img class="founder-avatar" src="/assets/images/owners/nidhi.jpeg" alt="Nidhi" />
-            </div>
-            <h3>Nidhi</h3>
-            <p class="founder-role">Customer Experience & Style Guide</p>
-            <p>Little Nidhi loves sparkles, smiles, and shiny treasures. Her special job is to remind everyone that every little sparkle brings a little extra happiness! ✨😊💖</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-founders></app-founders>
+
+  <app-first-four-supporters></app-first-four-supporters>
 
   <section class="section">
     <div class="container">
@@ -95,41 +57,14 @@
       </div>
     </div>
   </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">The Beginning of Our Journey</p>
-        <h2>🌸 A Heartfelt Thank You</h2>
-        <p class="section-subtitle">"Every great journey begins with someone who believes in you. Thank you for being our first four customers and for making Adhi & Nidhi Jewellery's dream shine brighter. We are forever grateful for your trust and support." ✨</p>
-      </div>
-      <div class="row g-4">
-        @for (customer of customers; track customer.id) {
-          <div class="col-lg-3 col-md-6">
-            <article class="customer-card">
-              <div class="customer-avatar-wrap">
-                <img class="customer-avatar" [src]="customer.image" [alt]="customer.name" />
-              </div>
-              <div class="customer-body">
-                <span class="customer-highlight">{{ customer.highlight }}</span>
-                <h3>{{ customer.name }}</h3>
-                <p class="customer-location">{{ customer.city }}</p>
-                <p class="customer-quote">“{{ customer.review }}”</p>
-                <p class="customer-item">{{ customer.item }}</p>
-              </div>
-            </article>
-          </div>
-        }
-      </div>
-    </div>
-  </section>
+  
 
   <section class="section offer-banner">
     <div class="container position-relative">
       <div class="row align-items-center g-4">
         <div class="col-lg-8">
           <p class="eyebrow">🎁 Free Gift on Every Order Above ₹999</p>
-          <h2>Shop for ₹1,000 or more and receive a complimentary gift worth up to ₹100!</h2>
+          <h2>Shop for ₹999 or more and receive a complimentary gift worth up to ₹100!</h2>
         </div>
         <div class="col-lg-4 text-lg-end">
           <a class="btn btn-light" routerLink="/products">Shop Now!</a>

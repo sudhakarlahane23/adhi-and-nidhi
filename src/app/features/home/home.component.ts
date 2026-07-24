@@ -7,6 +7,8 @@ import { FooterComponent } from '../../core/layout/footer/footer.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { BannerComponent } from '../../shared/banner/banner.component';
+import { Founders } from '../founders/founders';
+import { FirstFourSupporters } from '../first-four-supporters/first-four-supporters';
 // import { BannerComponent } from '../../shared/banner/banner';
 
 @Component({
@@ -18,7 +20,9 @@ import { BannerComponent } from '../../shared/banner/banner.component';
     HeaderComponent,
     AnnouncementBarComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
+    Founders,
+    FirstFourSupporters
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -30,44 +34,44 @@ export class HomeComponent implements OnDestroy {
   readonly products = this.productService.products;
   readonly featuredProducts = this.productService.featuredProducts;
   readonly categories = this.productService.categories;
-  readonly customers = [
-    {
-      id: 1,
-      name: 'Mrs. Mohini ji',
-      city: 'Pune',
-      highlight: 'Everyday Glow',
-      review: 'The finish looked so elegant that everyone asked where I bought it from.',
-      item: 'Bangles',
-      image: '/assets/images/hero/mohiniji.jpeg',
-    },
-    {
-      id: 2,
-      name: 'Mrs. Anu ji',
-      city: 'Pune',
-      highlight: 'Festival Favorite',
-      review: 'Perfect balance of style and affordability. I wore it for three events in a row.',
-      item: 'Necklace',
-      image: '/assets/images/hero/anuji.jpeg',
-    },
-    {
-      id: 3,
-      name: 'Mrs. Shahida ji',
-      city: 'Pune',
-      highlight: 'Everyday Glow',
-      review: 'So lightweight and classy. It instantly lifted my whole look.',
-      item: 'Bangles',
-      image: '/assets/images/hero/shahidaji.jpeg',
-    },
-    {
-      id: 4,
-      name: 'Mrs. Archana ji',
-      city: 'Pune',
-      highlight: 'Wedding Pick',
-      review: 'It looked rich and polished without being too heavy. Truly special.',
-      item: 'Bracelet and neck chain',
-      image: '/assets/images/hero/unknown.jpeg',
-    },
-  ];
+  // readonly customers = [
+  //   {
+  //     id: 1,
+  //     name: 'Mrs. Mohini ji',
+  //     city: 'Pune',
+  //     highlight: 'Everyday Glow',
+  //     review: 'The finish looked so elegant that everyone asked where I bought it from.',
+  //     item: 'Bangles',
+  //     image: '/assets/images/hero/mohiniji.jpeg',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Mrs. Anu ji',
+  //     city: 'Pune',
+  //     highlight: 'Festival Favorite',
+  //     review: 'Perfect balance of style and affordability. I wore it for three events in a row.',
+  //     item: 'Necklace',
+  //     image: '/assets/images/hero/anuji.jpeg',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Mrs. Shahida ji',
+  //     city: 'Pune',
+  //     highlight: 'Everyday Glow',
+  //     review: 'So lightweight and classy. It instantly lifted my whole look.',
+  //     item: 'Bangles',
+  //     image: '/assets/images/hero/shahidaji.jpeg',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Mrs. Archana ji',
+  //     city: 'Pune',
+  //     highlight: 'Wedding Pick',
+  //     review: 'It looked rich and polished without being too heavy. Truly special.',
+  //     item: 'Bracelet and neck chain',
+  //     image: '/assets/images/hero/unknown.jpeg',
+  //   },
+  // ];
   // readonly slides = [
   //   {
   //     id: 1,
