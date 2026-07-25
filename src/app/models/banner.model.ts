@@ -172,14 +172,14 @@ export const DEFAULT_CAROUSEL_CONFIG: BannerCarouselConfig = {
   transitionDuration: 700,
   transitionTimingFunction: 'ease-in-out',
   transitionEffect: 'crossfade',
-  pauseOnHover: true,
+  pauseOnHover: false,
   pauseOnTouch: true,
   pauseOnFocus: true,
   pauseOnHiddenTab: true,
   enableKeyboard: true,
-  enableMouseWheel: true,
-  enableTouchSwipe: true,
-  enableDrag: true,
+  enableMouseWheel: false,
+  enableTouchSwipe: false,
+  enableDrag: false,
   swipeThreshold: 60
 };
 

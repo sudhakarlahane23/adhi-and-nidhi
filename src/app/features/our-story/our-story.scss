@@ -1,0 +1,331 @@
+:host {
+  --brand-purple: #6d2f66;
+  --brand-purple-dark: #4a1f45;
+  --brand-gold: #c9a24b;
+  --brand-cream: #fdf6f0;
+  --brand-cream-2: #fff9f4;
+  --brand-text-muted: #7a6f78;
+
+  display: block;
+}
+
+.eyebrow {
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #5c5349;
+  max-width: 36rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #b8860b;
+  color: #fff;
+  border: 1px solid #b8860b;
+}
+
+.btn-outline {
+  border: 1px solid #b8860b;
+  color: #b8860b;
+  background: transparent;
+}
+
+.btn-light {
+  background: #fff;
+  color: #b8860b;
+}
+
+.stat-card,
+.category-card,
+.product-card,
+.about-card,
+.newsletter-form {
+  background: #fff;
+  border: 1px solid rgba(184, 134, 11, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 40px rgba(31, 26, 20, 0.06);
+}
+
+.stat-card {
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #b8860b;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-subtitle {
+  color: #6f655a;
+  max-width: 42rem;
+  margin: 1.5rem 0;
+}
+
+.about-card,
+.category-card,
+.product-card {
+  padding: 1.3rem;
+}
+
+.category-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+// .category-card img {
+//   width: 100%;
+//   // height: 220px;
+//   object-fit: cover;
+//   display: block;
+// }
+
+// .category-card-body {
+//   padding: 1.2rem 1.3rem 1.3rem;
+// }
+
+// .category-card h3,
+.product-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.product-card img {
+  width: 100%;
+  // height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(184, 134, 11, 0.14);
+  color: #b8860b;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.offer-banner {
+  background: #1f1a14;
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.newsletter-form {
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: 1px solid #e5dccd;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+}
+
+.offer-banner-divider {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #84725c;
+  }
+  &::after {
+    background-color: #9a8771;
+  }
+}
+
+/* ===== Shared section title ===== */
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    font-weight: 700;
+    color: var(--brand-purple-dark);
+    letter-spacing: .5px;
+    font-size: 1.6rem;
+    margin: 0;
+
+    .deco {
+      color: var(--brand-gold);
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+
+      &::before,
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 1px;
+        background: var(--brand-gold);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* ===== Our Journey ===== */
+.journey-section {
+  background: var(--brand-cream);
+  padding: 3.5rem 0;
+}
+
+.journey-track {
+  position: relative;
+
+  /* connecting dashed line - desktop only */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 48px;
+    left: 8%;
+    right: 8%;
+    border-top: 2px dotted var(--brand-gold);
+    z-index: 0;
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    &::before { display: block; }
+  }
+}
+
+.journey-item {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 .5rem;
+
+  .journey-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: var(--brand-cream-2);
+    border: 1px solid #f0dfd0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--brand-purple);
+    box-shadow: 0 2px 6px rgba(109, 47, 102, .08);
+  }
+
+  h6 {
+    font-weight: 700;
+    color: var(--brand-purple-dark);
+    margin-bottom: .5rem;
+    font-size: .95rem;
+  }
+
+  p {
+    font-size: .8rem;
+    color: var(--brand-text-muted);
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+/* ===== Why Families Trust Us ===== */
+.trust-section {
+  background: var(--brand-cream-2);
+  padding: 3rem 0;
+}
+
+.trust-card {
+  background: #fff;
+  border: 1px solid #f0e2d4;
+  border-radius: 14px;
+  padding: 1.1rem .75rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(109, 47, 102, .08);
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: var(--brand-purple);
+  }
+
+  span {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--brand-purple-dark);
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .journey-item p { display: none; } // keep mobile compact - title only under icon
+  .journey-icon { width: 60px; height: 60px; font-size: 1.3rem; }
+  .trust-card { padding: .85rem .4rem; }
+  .trust-card i { font-size: 1.25rem; }
+  .trust-card span { font-size: .72rem; }
+}
+
+
+@media (max-width: 767px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .founder-avatar-wrap {
+    max-height: 20rem;
+  }
+}

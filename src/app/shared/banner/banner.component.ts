@@ -9,7 +9,8 @@ import {
   computed,
   effect,
   inject,
-  signal
+  signal,
+  input
 } from '@angular/core';
 
 import { CommonModule, DOCUMENT } from '@angular/common';
@@ -43,6 +44,11 @@ import {
   }
 })
 export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
+
+ 
+
+  // ... inside the class, alongside your other signals:
+  readonly jsonPath = input<string>('assets/data/banner.json');
 
   // -------------------------------------------------------
   // Dependencies
@@ -158,13 +164,9 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
   // -------------------------------------------------------
 
   ngOnInit(): void {
-
     this.detectReducedMotionPreference();
-
-    this.bannerService.loadBanners();
-
+    this.bannerService.loadBanners(this.jsonPath());
     this.document.addEventListener('visibilitychange', this.handleVisibilityChange);
-
   }
 
   ngAfterViewInit(): void {
@@ -174,13 +176,9 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
     this.stopAutoplay();
-
     this.intersectionObserver?.disconnect();
-
     this.document.removeEventListener('visibilitychange', this.handleVisibilityChange);
-
   }
 
   // -------------------------------------------------------
@@ -209,11 +207,9 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
   // -------------------------------------------------------
 
   private setupIntersectionObserver(): void {
-
     if (typeof IntersectionObserver === 'undefined') {
       return;
     }
-
     this.intersectionObserver = new IntersectionObserver(
       entries => {
 
@@ -324,40 +320,39 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
   // -------------------------------------------------------
 
   onMouseEnter(): void {
-    // Un-comment if on mouse enter stop
-    // if (this.config.pauseOnHover) {
-    //   this.isPaused.set(true);
-    //   this.syncAutoplay();
-    // }
+    if (this.config.pauseOnHover) {
+      this.isPaused.set(true);
+      this.syncAutoplay();
+    }
 
   }
 
   onMouseLeave(): void {
 
-    // if (this.config.pauseOnHover) {
-    //   this.isPaused.set(false);
-    //   this.syncAutoplay();
-    // }
+    if (this.config.pauseOnHover) {
+      this.isPaused.set(false);
+      this.syncAutoplay();
+    }
 
   }
 
   @HostListener('focusin')
   onFocusIn(): void {
 
-    // if (this.config.pauseOnFocus) {
-    //   this.isPaused.set(true);
-    //   this.syncAutoplay();
-    // }
+    if (this.config.pauseOnFocus) {
+      this.isPaused.set(true);
+      this.syncAutoplay();
+    }
 
   }
 
   @HostListener('focusout')
   onFocusOut(): void {
 
-    // if (this.config.pauseOnFocus) {
-    //   this.isPaused.set(false);
-    //   this.syncAutoplay();
-    // }
+    if (this.config.pauseOnFocus) {
+      this.isPaused.set(false);
+      this.syncAutoplay();
+    }
 
   }
 
@@ -524,9 +519,9 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.pointerCurrentX = event.clientX;
 
-    // if (this.config.pauseOnTouch) {
-    //   this.isPaused.set(true);
-    // }
+    if (this.config.pauseOnTouch) {
+      this.isPaused.set(true);
+    }
 
   }
 
@@ -550,9 +545,9 @@ export class BannerComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const distance = this.pointerStartX - this.pointerCurrentX;
 
-    // if (this.config.pauseOnTouch) {
-    //   this.isPaused.set(false);
-    // }
+    if (this.config.pauseOnTouch) {
+      this.isPaused.set(false);
+    }
 
     if (Math.abs(distance) >= this.config.swipeThreshold) {
 

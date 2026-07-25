@@ -49,50 +49,41 @@ export class BannerService {
   // Config
   // -------------------------------------------------------
 
-  private readonly bannerJsonPath = 'assets/data/banner.json';
+  // private readonly bannerJsonPath = 'assets/data/banner.json';
+  private readonly defaultBannerJsonPath = 'assets/data/banner.json';
 
   // -------------------------------------------------------
   // Loading
   // -------------------------------------------------------
 
-  loadBanners(): void {
+loadBanners(jsonPath?: string): void {
 
-    this.loadingSignal.set(true);
+  const path = jsonPath || this.defaultBannerJsonPath;
 
-    this.errorSignal.set(false);
+  this.loadingSignal.set(true);
+  this.errorSignal.set(false);
 
-    this.http
-      .get<Banner[]>(this.bannerJsonPath)
-      .subscribe({
+  this.http
+    .get<Banner[]>(path)
+    .subscribe({
+      next: (response) => {
+        const normalized = (response || [])
+          .map(banner => this.normalize(banner))
+          .filter(banner => banner.active)
+          .sort((a, b) => a.displayOrder - b.displayOrder);
 
-        next: (response) => {
+        this.bannerSignal.set(normalized);
+        this.loadingSignal.set(false);
+      },
+      error: error => {
+        console.error(`Unable to load banner JSON from ${path}.`, error);
+        this.bannerSignal.set([]);
+        this.loadingSignal.set(false);
+        this.errorSignal.set(true);
+      }
+    });
 
-          const normalized = (response || [])
-            .map(banner => this.normalize(banner))
-            .filter(banner => banner.active)
-            .sort((a, b) => a.displayOrder - b.displayOrder);
-
-          this.bannerSignal.set(normalized);
-
-          this.loadingSignal.set(false);
-
-        },
-
-        error: error => {
-
-          console.error('Unable to load banner JSON.', error);
-
-          this.bannerSignal.set([]);
-
-          this.loadingSignal.set(false);
-
-          this.errorSignal.set(true);
-
-        }
-
-      });
-
-  }
+}
 
   refresh(): void {
 

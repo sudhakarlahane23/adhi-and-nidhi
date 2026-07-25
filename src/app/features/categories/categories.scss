@@ -1,0 +1,42 @@
+h2,
+h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.eyebrow {
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.category-card {
+  background: #fff;
+  border: 1px solid rgba(184, 134, 11, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 40px rgba(31, 26, 20, 0.06);
+  overflow: hidden;
+  padding: 0;
+}
+
+.category-card img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.category-card-body {
+  padding: 1.2rem 1.3rem 1.3rem;
+}
+
+.category-card h3 {
+  margin-bottom: 0.6rem;
+}

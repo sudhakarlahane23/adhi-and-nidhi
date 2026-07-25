@@ -6,22 +6,26 @@ import { ProductService } from '../../core/services/product.service';
 import { AnnouncementBarComponent } from '../../core/layout/announcement-bar/announcement-bar.component';
 import { HeaderComponent } from '../../core/layout/header/header.component';
 import { FooterComponent } from '../../core/layout/footer/footer.component';
+import { BannerComponent } from '../../shared/banner/banner.component';
+import { FormatCategoryPipe } from '../../pipes/format-category-pipe';
 
 const CATEGORY_STORAGE_KEY = 'products.selectedCategory';
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-collection',
   standalone: true,
   imports: [
     CommonModule,
     AnnouncementBarComponent,
     HeaderComponent,
     FooterComponent,
+    BannerComponent,
+    FormatCategoryPipe
   ],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss',
+  templateUrl: './collection.component.html',
+  styleUrl: './collection.component.scss',
 })
-export class ProductsComponent {
+export class CollectionComponent {
   private readonly productService = inject(ProductService);
   private readonly cartService = inject(CartService);
 

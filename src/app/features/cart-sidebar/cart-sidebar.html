@@ -20,11 +20,12 @@
       } @else {
       @for (item of cartService.items(); track item.product['product-id']) {
       <div class="cart-item">
-        <img [src]="item.product.image" [alt]="item.product['product-code']" />
+        <div class="cart-img-wrapper" (click)="openImagePreview(item.product)">
+          <img [src]="item.product.image" [alt]="item.product['product-code']" />
+        </div>
 
         <div class="cart-details">
           <h4>{{ item.product['product-code'] }}</h4>
-
           <table class="price-table">
             <tr>
               <td>Quantity</td>
@@ -47,14 +48,11 @@
               <td>₹{{ getItemTotal(item) }}</td>
             </tr>
           </table>
-
           <div class="cart-actions">
             <button class="qty-btn" type="button" (click)="cartService.decreaseQuantity(item.product['product-id'])">
               −
             </button>
-
             <span class="qty">{{ item.quantity }}</span>
-
             <button class="qty-btn" type="button" (click)="cartService.increaseQuantity(item.product['product-id'])">
               +
             </button>
@@ -170,15 +168,12 @@
 
           <!-- QR Code -->
           <div class="qr-wrapper">
-            <img
-              src="assets/images/QR-Code/phonePay.jpeg"
-              alt="PhonePe QR Code"
-              class="qr-image"
-            />
+            <img src="assets/images/QR-Code/phonePay.jpeg" alt="PhonePe QR Code" class="qr-image" />
           </div>
 
           <p class="qr-caption">
-            Scan this QR code using <strong>PhonePe, Google Pay, Paytm, BHIM</strong> or any UPI app to complete your payment.
+            Scan this QR code using <strong>PhonePe, Google Pay, Paytm, BHIM</strong> or any UPI app to complete your
+            payment.
           </p>
 
           <div class="upi-summary">
@@ -236,7 +231,8 @@
               will vary by distance, and are payable by me separately.
             </label>
 
-            @if (checkoutForm.get('deliveryChargesConfirmed')?.invalid && checkoutForm.get('deliveryChargesConfirmed')?.touched) {
+            @if (checkoutForm.get('deliveryChargesConfirmed')?.invalid &&
+            checkoutForm.get('deliveryChargesConfirmed')?.touched) {
             <small class="error">Please confirm you understand the delivery charges.</small>
             }
           </div>
@@ -273,5 +269,19 @@
       </button>
     </div>
   </aside>
+</div>
+}
+
+<!-- =========================
+     Image Preview Lightbox
+========================== -->
+@if (previewImage) {
+<div class="image-lightbox-overlay" (click)="closeImagePreview()">
+  <button class="lightbox-close" type="button" (click)="closeImagePreview()">✕</button>
+
+  <div class="image-lightbox-content" (click)="$event.stopPropagation()">
+    <img [src]="previewImage.url" [alt]="previewImage.alt" class="lightbox-img" />
+    <p class="lightbox-caption">{{ previewImage.alt }}</p>
+  </div>
 </div>
 }

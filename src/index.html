@@ -1,14 +1,34 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF8VG30SRJ"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    (function () {
+      const hostname = window.location.hostname;
 
-    gtag('config', 'G-RF8VG30SRJ');
+      // Don't load Google Analytics on localhost
+      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        console.log('Google Analytics disabled on localhost.');
+        return;
+      }
+
+      // Load Google Analytics script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RF8VG30SRJ';
+      document.head.appendChild(script);
+
+      // Initialize GA
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+
+      gtag('js', new Date());
+      gtag('config', 'G-RF8VG30SRJ');
+    })();
   </script>
   <!-- Google tag (gtag.js) end -->
 
@@ -17,8 +37,11 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>
