@@ -1,0 +1,21 @@
+<section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Our Collections</p>
+        <h2>Popular categories</h2>
+      </div>
+      <div class="row g-4">
+        @for (category of categories(); track category) {
+          <div class="col-6 col-md-3">
+            <div class="category-card">
+              <img  [src]="categoryImageMap()[category]" [alt]="category" />
+              <div class="category-card-body">
+                <h3>{{ category }}</h3>
+                <p>Exquisite craftsmanship for your everyday sparkle.</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>

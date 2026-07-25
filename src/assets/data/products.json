@@ -8,13 +8,6 @@
       "category": "ad-stud",
       "price": "₹90",
       "image": "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1.avif",
-      "images": {
-        "hover": "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-hover.webp",
-        "slides": [
-          "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-slide-1.webp",
-          "/assets/images/collection/ad-stud/ad-stud-r-90-ofr-10-img-1-slide-2.webp"
-        ]
-      },
       "offer": "10%",
       "seo-information": {
         "seo-information": {
@@ -31,9 +24,6 @@
       "category": "ad-top",
       "price": "₹99",
       "image": "/assets/images/collection/ad-top/ad-stud-r-99-img-2.avif",
-      "images": {
-        "hover": "/assets/images/collection/ad-top/ad-stud-r-99-img-2-hover.webp"
-      },
       "seo-information": {
         "seo-information": {
           "meta-title": "Statement Ring with Elegant Finish",
@@ -49,9 +39,6 @@
       "category": "ad-top",
       "price": "₹99",
       "image": "/assets/images/collection/ad-top/ad-stud-r-99-oos-img-1.avif",
-      "images": {
-        "hover": "/assets/images/collection/ad-top/ad-stud-r-99-oos-img-1-hover.webp"
-      },
       "is-out-of-stock": true,
       "seo-information": {
         "seo-information": {

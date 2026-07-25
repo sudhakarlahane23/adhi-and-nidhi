@@ -1,0 +1,169 @@
+<section
+  class="hero-banner"
+  (mouseenter)="pauseAutoplay()"
+  (mouseleave)="resumeAutoplay()"
+>
+
+  <div class="banner-wrapper">
+
+    @for (banner of banners(); track banner.id) {
+
+      <div
+        class="banner-slide"
+        [class.active]="$index === currentSlide()"
+      >
+
+        <!-- Background Image -->
+
+        <picture>
+
+          @if (banner.mobileImage) {
+            <source
+              media="(max-width:767px)"
+              [srcset]="banner.mobileImage">
+          }
+
+          <img
+            [src]="banner.image"
+            [alt]="banner.title"
+            loading="eager">
+
+        </picture>
+
+        <!-- Overlay -->
+
+        @if (banner.overlay) {
+
+          <div
+            class="banner-overlay"
+            [style.opacity]="banner.overlayOpacity">
+          </div>
+
+        }
+
+        <!-- Content -->
+
+        <div
+          class="banner-content"
+
+          [class.desktop-left]="banner.position.desktop.horizontal === 'left'"
+          [class.desktop-center]="banner.position.desktop.horizontal === 'center'"
+          [class.desktop-right]="banner.position.desktop.horizontal === 'right'"
+
+          [class.desktop-top]="banner.position.desktop.vertical === 'top'"
+          [class.desktop-middle]="banner.position.desktop.vertical === 'center'"
+          [class.desktop-bottom]="banner.position.desktop.vertical === 'bottom'"
+
+          [class.text-left]="banner.position.desktop.textAlign === 'left'"
+          [class.text-center]="banner.position.desktop.textAlign === 'center'"
+          [class.text-right]="banner.position.desktop.textAlign === 'right'"
+
+        >
+
+          @if (banner.eyebrow) {
+            <p class="banner-eyebrow">
+              {{ banner.eyebrow }}
+            </p>
+          }
+
+          <h1>
+
+            {{ banner.title }}
+
+          </h1>
+
+          <p class="banner-description">
+
+            {{ banner.description }}
+
+          </p>
+
+          @if (banner.buttonText) {
+
+            <div class="banner-actions">
+
+              <a
+
+                class="btn-banner"
+
+                [routerLink]="banner.buttonLink"
+
+              >
+
+                {{ banner.buttonText }}
+
+              </a>
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+  <!-- Previous -->
+
+  <button
+
+    class="banner-nav prev"
+
+    type="button"
+
+    (click)="previousSlide()"
+
+    aria-label="Previous Banner"
+
+  >
+
+    ❮
+
+  </button>
+
+  <!-- Next -->
+
+  <button
+
+    class="banner-nav next"
+
+    type="button"
+
+    (click)="nextSlide()"
+
+    aria-label="Next Banner"
+
+  >
+
+    ❯
+
+  </button>
+
+  <!-- Dot Navigation -->
+
+  <div class="banner-dots">
+
+    @for (banner of banners(); track banner.id) {
+
+      <button
+
+        type="button"
+
+        class="dot"
+
+        [class.active]="$index===currentSlide()"
+
+        (click)="goToSlide($index)"
+
+      >
+
+      </button>
+
+    }
+
+  </div>
+
+</section>

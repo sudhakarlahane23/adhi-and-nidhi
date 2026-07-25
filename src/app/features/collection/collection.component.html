@@ -1,6 +1,10 @@
 <app-announcement-bar></app-announcement-bar>
 <app-header></app-header>
 
+<section class="hero">
+  <app-banner jsonPath="assets/data/banner-products.json"></app-banner>
+</section>
+
 <main class="page-shell">
   <section class="container py-4">
     <div class="page-heading">
@@ -27,7 +31,7 @@
                 [class.active]="selectedCategory() === category"
                 (click)="selectCategory(category)"
               >
-                {{ category }}
+                {{ category | formatCategory }}
               </button>
             }
           </div>
@@ -78,7 +82,7 @@
               <img class="main-image" [src]="product.image" [alt]="product['product-code']" />
             </div>
             <div class="product-body">
-              <span class="badge">{{ product.category }}</span>
+              <span class="badge">{{ product.category | formatCategory }}</span>
 
               <div class="product-footer">
                 <strong>{{ product.price }}</strong>

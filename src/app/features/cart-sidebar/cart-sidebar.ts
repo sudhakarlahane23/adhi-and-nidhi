@@ -62,7 +62,26 @@ export class CartSidebarComponent {
 
   longitude: number | null = null;
 
-  isSharingLocation = false;
+
+  /**
+   * Image Preview (Lightbox)
+   */
+  previewImage: { url: string; alt: string } | null = null;
+
+  openImagePreview(product: Product): void {
+    this.previewImage = {
+      url: product.image,
+      alt: product['product-code'],
+    };
+
+    // Prevent background scroll while lightbox is open
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeImagePreview(): void {
+    this.previewImage = null;
+    document.body.style.overflow = '';
+  }
 
   /**
    * Checkout Form
@@ -119,7 +138,6 @@ export class CartSidebarComponent {
       return;
     }
 
-    this.isSharingLocation = true;
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -127,11 +145,9 @@ export class CartSidebarComponent {
         this.longitude = position.coords.longitude;
 
         this.locationShared = true;
-        this.isSharingLocation = false;
       },
 
       () => {
-        this.isSharingLocation = false;
 
         alert('Unable to fetch your location.');
       },
